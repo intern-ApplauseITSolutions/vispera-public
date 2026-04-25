@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0A374C;
+  --color-primary: #0A374C;
+  --color-brand-secondary: #5EA4A4;
+  --color-secondary: #5EA4A4;
+  --color-brand-teal: #5EA4A4;
+  --color-brand-dark-teal: #0A374C;
+  --color-bg-light: #F7F5F2;
+  --color-bg-cream: #f0ebe0;
+  --color-bg-dark: #0A374C;
+  --color-bg-card: #ffffff;
+  --color-text-main: #0A374C;
+  --color-text-muted: #666666;
+  --color-text-light: #999999;
+  
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --animate-fade-in: fade-in 0.6s ease-out;
+  --animate-slide-up: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: -2px;
+    padding: 0;
+    border: 0 solid;
+  }
+
+  :root {
+    color-scheme: light;
+    overflow-x: hidden;
+  }
+  
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-bg-light text-text-main font-body;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 md:px-8 lg:px-12;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .btn-primary {
+    @apply bg-brand-teal text-white font-semibold rounded-full px-8 py-3 transition-all duration-300 hover:bg-brand-secondary hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-brand-teal text-brand-teal font-semibold rounded-full px-8 py-3 transition-all duration-300 hover:bg-brand-teal hover:text-white;
+  }
+
+  .section-label {
+    @apply text-brand-teal font-semibold tracking-widest uppercase text-sm;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold text-text-main font-heading;
+  }
+
+  .card-shadow {
+    @apply shadow-lg shadow-black/5;
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+}
