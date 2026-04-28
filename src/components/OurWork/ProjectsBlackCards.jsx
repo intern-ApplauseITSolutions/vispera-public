@@ -354,18 +354,24 @@ export default function ProjectsBlackCards({ searchQuery = "", sortBy = "Latest"
               <div className="flex flex-col lg:grid lg:grid-cols-[5.5fr_6.5fr] gap-4 lg:gap-6 items-stretch">
                 {/* Top/Left: Image Section */}
                 <div className="relative w-full h-full">
-                  <div className="absolute -top-[2px] left-6 lg:left-10 z-20">
-                    <div className="bg-[#5EA4A4] text-[#0A374C] text-[10px] lg:text-[12px] px-8 py-2.5 rounded-b-2xl shadow-lg font-bold min-w-[120px] text-center tracking-widest uppercase">
+                  <div className="absolute -top-[2px] left-1/2 -translate-x-1/2 z-20">
+                    <div className="bg-[#5EA4A4] text-[#0A374C] text-[8px] md:text-[10px] lg:text-[12px] px-4 md:px-6 lg:px-8 py-2 md:py-2.5 rounded-b-2xl shadow-lg font-bold min-w-[100px] md:min-w-[120px] text-center tracking-widest uppercase">
                       {selectedProject.badge}
                     </div>
                   </div>
 
-                  <div className="rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full h-full shadow-2xl bg-black/20 flex flex-col justify-center">
+                  <div className="rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full h-full shadow-2xl bg-black/20 flex flex-col justify-center relative group cursor-pointer"
+                    onClick={() => {
+                      if (selectedProject.link) {
+                        window.open(selectedProject.link, '_blank', 'noopener,noreferrer');
+                      }
+                    }}
+                  >
                     {selectedProject.image ? (
                       <img
                         src={selectedProject.image}
                         alt={selectedProject.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] flex items-center justify-center">
@@ -374,6 +380,14 @@ export default function ProjectsBlackCards({ searchQuery = "", sortBy = "Latest"
                         </svg>
                       </div>
                     )}
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-white/90 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-[#5EA4A4] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -419,7 +433,7 @@ export default function ProjectsBlackCards({ searchQuery = "", sortBy = "Latest"
                         href={selectedProject.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-2.5 px-10 rounded-xl transition-all shadow-xl text-[9px] md:text-[10px] tracking-[0.2em] transform active:scale-95 uppercase"
+                        className="inline-block bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-2.5 px-10 rounded-xl transition-colors shadow-xl text-[9px] md:text-[10px] tracking-[0.2em] transform active:scale-95 uppercase border border-transparent hover:border-white"
                       >
                         Watch Video
                       </a>

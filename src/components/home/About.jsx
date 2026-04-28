@@ -60,11 +60,10 @@ export default function About({ showButton = true }) {
               {/* Unified Quote */}
               <div className="mb-4 md:mb-6 w-full">
                 <p
-                  className="text-[#0A374C]"
+                  className="text-[#0A374C] text-[28px] md:text-[32px]"
                   style={{
                     fontFamily: "'Playfair Display', serif",
                     fontWeight: 600,
-                    fontSize: "32px",
                     lineHeight: "42px",
                     textAlign: "center",
                     verticalAlign: "middle"
@@ -78,11 +77,10 @@ export default function About({ showButton = true }) {
               {/* Subheading & Description */}
               <div className="space-y-1 w-full max-w-[90%] md:max-w-full">
                 <p
-                  className="text-[#0A374C]"
+                  className="text-[#0A374C] text-[13px] md:text-[14px]"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontWeight: 700,
-                    fontSize: "14px",
                     lineHeight: "24px",
                     textAlign: "center",
                     verticalAlign: "middle",
@@ -93,11 +91,10 @@ export default function About({ showButton = true }) {
                 </p>
 
                 <p
-                  className="text-[#0A374C]/80"
+                  className="text-[#0A374C]/80 text-[13px] md:text-[14px]"
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontWeight: 500,
-                    fontSize: "14px",
                     lineHeight: "24px",
                     textAlign: "center",
                     verticalAlign: "middle",
@@ -112,17 +109,7 @@ export default function About({ showButton = true }) {
                 <div className="mt-6 md:mt-8">
                   <Link
                     to="/about"
-                    className="px-12 py-3.5 bg-[#5EA4A4] text-white rounded-lg shadow-lg hover:bg-[#0A374C] transition-all transform hover:scale-105 active:scale-95 inline-block"
-                    style={{
-                      fontFamily: "'Inter', sans-serif",
-                      fontWeight: 500,
-                      fontSize: "16px",
-                      lineHeight: "24px",
-                      letterSpacing: "0",
-                      textAlign: "center",
-                      verticalAlign: "middle",
-                      textTransform: "capitalize"
-                    }}
+                    className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-2.5 px-8 rounded shadow-lg text-[10px] tracking-widest transform active:scale-95 uppercase transition-all inline-block"
                   >
                     Learn More
                   </Link>
@@ -143,7 +130,7 @@ export default function About({ showButton = true }) {
         whileInView={{ opacity: 1, scale: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="hidden xl:block absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 w-[220px] lg:w-[260px] pointer-events-none z-10"
+        className="hidden lg:block absolute right-6 lg:right-12 top-1/2 -translate-y-1/2 w-[220px] lg:w-[260px] pointer-events-none z-10"
       >
         <img
           src={rightImg}

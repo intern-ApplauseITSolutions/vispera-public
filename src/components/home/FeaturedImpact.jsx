@@ -110,7 +110,7 @@ export default function FeaturedImpact() {
               transition={{ duration: 0.5 }}
               className="w-full h-full relative z-10"
             >
-              <div className="w-full mx-auto px-6 md:px-16 lg:px-24 py-8 md:py-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+              <div className="w-full mx-auto px-12 md:px-16 lg:px-24 py-4 md:py-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
 
                 {/* Image Area - Card Style */}
                 <div className="lg:col-span-6 relative">

@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/images/transparent-logo.png";
 import { StartProjectButton } from "../common";
+import SectionIndicator from "../home/SectionIndicator";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -26,7 +27,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 shadow-sm h-[88px] flex items-center" style={{ backgroundColor: "#F7F5F2" }}>
+    <>
+    <nav className="fixed top-0 left-0 w-full z-50 h-[88px] flex items-center" style={{ backgroundColor: "#F7F5F2" }}>
 
       {/* Main navbar row */}
       <div className="w-full px-8 md:px-16">
@@ -59,8 +61,7 @@ export default function Navbar() {
 
           <StartProjectButton 
             variant="dark"
-            className="!hidden lg:!inline-block !rounded-lg"
-            style={{ fontSize: "13px", padding: "14px 32px" }}
+            className="!hidden lg:!inline-block"
           />
 
           {/* Mobile/Tablet toggle — visible below lg */}
@@ -94,16 +95,30 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <StartProjectButton 
-                variant="dark"
-                className="w-full !rounded-lg"
-                style={{ backgroundColor: "#1a3a3a" }} 
-                onClick={() => setIsMobileMenuOpen(false)}
-              />
+              <div className="flex justify-start">
+                <StartProjectButton 
+                  variant="dark"
+                  className="text-[9px] py-2 px-6"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                />
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </nav>
+    
+    {/* Section Indicator - Fixed below navbar - Only on home page */}
+    {location.pathname === "/" && (
+      <div className="fixed top-[88px] left-0 w-full z-40">
+        <SectionIndicator />
+      </div>
+    )}
+    
+    {/* Simple line on other pages - Only visible after scroll */}
+    {location.pathname !== "/" && isScrolled && (
+      <div className="fixed top-[88px] left-0 w-full h-[0.5px] bg-[#0A374C] z-40" />
+    )}
+    </>
   );
 }

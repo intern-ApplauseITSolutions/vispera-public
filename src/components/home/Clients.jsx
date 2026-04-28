@@ -73,7 +73,7 @@ import sectionBg from "../../assets/images/our-client-bg.png";
 export default function Clients({ hideViewAllButton = false }) {
   const navigate = useNavigate();
   return (
-    <section id="clients" className="pt-2 pb-8 md:pt-4 md:pb-12 overflow-hidden relative" style={{ 
+    <section id="clients" className="pt-2 pb-4 md:pt-4 md:pb-8 overflow-hidden relative" style={{ 
       backgroundImage: `url(${sectionBg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
@@ -84,13 +84,12 @@ export default function Clients({ hideViewAllButton = false }) {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14">
 
         {/* Header */}
-        <div className="flex flex-col items-center mb-2 relative">
+        <div className="flex flex-col items-center mb-8 md:mb-10 lg:mb-12 relative">
           <p 
-            className="text-[#5EA4A4] w-full text-center"
+            className="text-[#5EA4A4] w-full text-center text-sm md:text-base"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontWeight: 600,
-              fontSize: "16px",
               lineHeight: "42px",
               textAlign: "center",
               verticalAlign: "middle",
@@ -101,11 +100,10 @@ export default function Clients({ hideViewAllButton = false }) {
           </p>
           <div className="relative inline-block mt-[-8px]">
             <h2 
-              className="text-[#0A374C] relative z-10 text-center"
+              className="text-[#0A374C] relative z-10 text-center text-2xl md:text-[28px] lg:text-[32px]"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 600,
-                fontSize: "32px",
                 lineHeight: "42px",
                 letterSpacing: "0.02em",
                 textAlign: "center",

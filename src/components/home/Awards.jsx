@@ -25,7 +25,7 @@ const awards = [
 
 export default function Awards() {
   return (
-    <section id="awards" className="bg-bg-light overflow-hidden py-10 md:py-16">
+    <section id="awards" className="bg-bg-light overflow-hidden py-6 md:py-10">
       {/* Header - Optimized for Mobile/Desktop Typography */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-6 md:mb-8">
         <div className="flex flex-col items-center relative">
@@ -98,19 +98,36 @@ export default function Awards() {
               {awards.map((award, index) => (
                 <motion.div
                   key={award.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative bg-[#5EA4A4] border border-white/10 shadow-2xl flex flex-col items-center justify-center text-center group hover:brightness-105 transition-all w-full max-w-[344px] h-[140px] md:w-[203px] md:h-[140px] shrink-0"
+                  transition={{ 
+                    delay: index * 0.15,
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={{ 
+                    scale: 1.05,
+                    y: -5,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="relative bg-[#5EA4A4] border border-white/10 shadow-2xl flex flex-col items-center justify-center text-center group transition-all w-full max-w-[344px] h-[140px] md:w-[203px] md:h-[140px] shrink-0 cursor-pointer"
                   style={{
                     borderRadius: "12px"
                   }}
                 >
                   {/* Overlapping Badge */}
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center border-[5px] border-[#0A374C] group-hover:scale-110 transition-transform z-10 p-2">
+                  <motion.div 
+                    className="absolute -top-10 left-1/2 -translate-x-1/2 w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center border-[5px] border-[#0A374C] transition-transform z-10 p-2"
+                    whileHover={{ 
+                      rotate: 360,
+                      scale: 1.2,
+                      transition: { duration: 0.6 }
+                    }}
+                  >
                     <img src={award.icon} alt="Award Badge" className="w-full h-full object-contain" />
-                  </div>
+                  </motion.div>
 
                   <p
                     className="text-white text-center px-4"

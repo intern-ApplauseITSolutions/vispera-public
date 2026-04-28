@@ -15,9 +15,13 @@ export default function StartProjectButton({ className, variant = "primary", sty
   return (
     <button
       className={clsx(
-        "inline-block font-bold rounded-xl transition-all duration-300 shadow-lg text-center uppercase tracking-wider",
+        "font-bold rounded shadow-lg uppercase tracking-widest transition-all transform active:scale-95",
         isDark ? "bg-[#0A374C] hover:bg-[#5EA4A4]" : "bg-[#5EA4A4] hover:bg-[#0A374C]",
-        "text-white text-[13px] md:text-sm px-8 py-3.5 md:px-10 md:py-4",
+        "text-white",
+        // Only apply default size if no custom className with size is provided
+        !className?.includes('text-') && "text-xs",
+        !className?.includes('py-') && !className?.includes('p-') && "py-3",
+        !className?.includes('px-') && !className?.includes('p-') && "px-4",
         className
       )}
       style={style}

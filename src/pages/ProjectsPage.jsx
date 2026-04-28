@@ -32,7 +32,7 @@ export default function ProjectsPage() {
   if (sortBy === "All" || sortBy === "Latest") {
     return (
       <Layout>
-        <div className="mt-16 md:mt-20 lg:mt-24">
+        <div className="mt-16 md:mt-20 lg:mt-22">
           <HeaderBanner title="Our Work" />
         </div>
         <OurWorkHeader onSearch={handleSearch} onSort={handleSort} />
@@ -55,7 +55,7 @@ export default function ProjectsPage() {
 
     return (
       <Layout>
-        <div className="mt-16 md:mt-20 lg:mt-24">
+        <div className="mt-16 md:mt-20 lg:mt-22">
           <HeaderBanner title="Our Work" />
         </div>
         <OurWorkHeader onSearch={handleSearch} onSort={handleSort} />
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
   if (!searchQuery.trim()) {
     return (
       <Layout>
-        <div className="mt-16 md:mt-20 lg:mt-24">
+        <div className="mt-16 md:mt-20 lg:mt-22">
           <HeaderBanner title="Our Work" />
         </div>
         <OurWorkHeader onSearch={handleSearch} onSort={handleSort} />
@@ -108,7 +108,7 @@ export default function ProjectsPage() {
 
     return (
       <Layout>
-        <div className="mt-16 md:mt-20 lg:mt-24">
+        <div className="mt-16 md:mt-20 lg:mt-22">
           <HeaderBanner title="Our Work" />
         </div>
         <OurWorkHeader onSearch={handleSearch} onSort={handleSort} />
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
   // Only show categories that have matching projects
   return (
     <Layout>
-      <div className="mt-16 md:mt-20 lg:mt-24">
+      <div className="mt-16 md:mt-20 lg:mt-22">
         <HeaderBanner title="Our Work" />
       </div>
       <OurWorkHeader onSearch={handleSearch} onSort={handleSort} />

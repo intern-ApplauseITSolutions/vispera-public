@@ -82,7 +82,7 @@ export default function Footer() {
             <div className="inline-block">
               <img src={logo} alt="Vispera Studios" className="h-20 w-auto object-contain" />
             </div>
-            <p className="text-white/90 text-sm leading-relaxed max-w-xs">
+            <p className="text-white text-sm leading-relaxed max-w-xs" style={{ fontFamily: "'Inter', sans-serif" }}>
               We craft meaningful visual stories that inspire, connect, and
               create impact. From NGOs to purpose-driven brands, we bring
               stories to life through creativity and authenticity.
@@ -104,14 +104,15 @@ export default function Footer() {
 
           {/* Col 2 — Quick Links */}
           <div className="space-y-5 lg:pt-2 sm:flex sm:flex-col sm:items-center lg:items-start">
-            <h3 className="text-sm font-bold text-white uppercase tracking-widest">Quick Links</h3>
+            <h3 className="text-sm font-bold text-white uppercase tracking-widest" style={{ fontFamily: "'Inter', sans-serif" }}>Quick Links</h3>
             <ul className="space-y-2.5 sm:text-center lg:text-left">
               {quickLinks.map((link) => (
                 <li key={link.href} className="flex items-center gap-2 sm:justify-center lg:justify-start">
-                  <span className="text-white/50 text-xs">•</span>
+                  <span className="text-white text-xs">•</span>
                   <Link
                     to={link.href}
-                    className="text-white/85 hover:text-white transition-colors duration-300 text-sm"
+                    className="text-white hover:text-white/80 transition-colors duration-300 text-sm"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {link.label}
                   </Link>
@@ -122,29 +123,31 @@ export default function Footer() {
 
           {/* Col 3 — Contact Info */}
           <div className="space-y-5 lg:pt-2">
-            <h3 className="text-sm font-bold text-white uppercase tracking-widest">Contact Info</h3>
+            <h3 className="text-sm font-bold text-white uppercase tracking-widest" style={{ fontFamily: "'Inter', sans-serif" }}>Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-white/80 shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-white shrink-0 mt-0.5" />
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="text-white/85 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white/80 transition-colors text-sm"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {contactInfo.email}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <Phone className="w-4 h-4 text-white/80 shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-white shrink-0 mt-0.5" />
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="text-white/85 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white/80 transition-colors text-sm"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {contactInfo.phone}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-white/80 shrink-0 mt-0.5" />
-                <address className="text-white/85 text-sm not-italic leading-relaxed">
+                <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5" />
+                <address className="text-white text-sm not-italic leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
                   {contactInfo.address}
                 </address>
               </li>
@@ -153,8 +156,8 @@ export default function Footer() {
 
           {/* Col 4 — CTA + QR */}
           <div className="space-y-4 lg:pt-2 flex flex-col items-start sm:items-center lg:items-center justify-start sm:justify-center lg:justify-center">
-            <h3 className="text-base font-bold text-white">Have a story to tell?</h3>
-            <p className="text-white/85 text-sm leading-relaxed text-left sm:text-center lg:text-center">
+            <h3 className="text-base font-bold text-white" style={{ fontFamily: "'Inter', sans-serif" }}>Have a story to tell?</h3>
+            <p className="text-white text-sm leading-relaxed text-left sm:text-center lg:text-center" style={{ fontFamily: "'Inter', sans-serif" }}>
               Let's create something meaningful together.
             </p>
             <StartProjectButton 
@@ -168,7 +171,7 @@ export default function Footer() {
                 alt="QR Code"
                 className="w-20 h-20 object-cover rounded-lg shrink-0"
               />
-              <p className="text-white text-xs leading-relaxed sm:text-center lg:text-center text-left">
+              <p className="text-white text-xs leading-relaxed sm:text-center lg:text-center text-left" style={{ fontFamily: "'Inter', sans-serif" }}>
                 Scan to save our<br />contact details
               </p>
             </div>
@@ -178,8 +181,8 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[15px] font-semibold text-white/80"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}
+          className="mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[15px] font-semibold text-white"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.15)", fontFamily: "'Inter', sans-serif" }}
         >
           <p>© {currentYear} Vispera Studios. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-2">

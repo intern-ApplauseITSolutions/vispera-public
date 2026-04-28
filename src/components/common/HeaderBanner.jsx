@@ -4,7 +4,7 @@ import mobileHeaderBg from "../../assets/images/header/m_header-bg.jpg";
  
 export default function HeaderBanner({ title }) {
   return (
-<section className="relative h-[200px] sm:h-[240px] md:h-[300px] lg:h-[360px] overflow-hidden">
+<section className="relative h-[200px] sm:h-[240px] md:h-[300px] lg:h-[300px] overflow-hidden">
       {/* Mobile background image */}
 <img
         src={mobileHeaderBg}

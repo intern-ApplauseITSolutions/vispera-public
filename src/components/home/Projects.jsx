@@ -116,6 +116,7 @@ export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeGalleryIdx, setActiveGalleryIdx] = useState(null);
+  const [galleryStartIdx, setGalleryStartIdx] = useState(0);
 
   const filtered = activeCategory === "All"
     ? projects
@@ -133,9 +134,21 @@ export default function Projects() {
     }
   };
 
+  const handleNextThumbnails = () => {
+    if (selectedProject?.gallery && galleryStartIdx + 3 < selectedProject.gallery.length) {
+      setGalleryStartIdx(galleryStartIdx + 1);
+    }
+  };
+
+  const handlePrevThumbnails = () => {
+    if (galleryStartIdx > 0) {
+      setGalleryStartIdx(galleryStartIdx - 1);
+    }
+  };
+
   return (
     <>
-      <section id="work" className="bg-bg-light overflow-hidden py-8 md:py-10">
+      <section id="work" className="bg-bg-light overflow-hidden py-4 md:py-6">
         <div className="w-full px-4 md:px-8 lg:px-12 max-w-[1600px] mx-auto">
           {/* Header */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-8 mb-8 w-full">
@@ -194,7 +207,7 @@ export default function Projects() {
           </div>
 
           {/* Grid */}
-          <div className="min-h-[300px]">
+          <div className="min-h-[300px] px-8 sm:px-0">
             {filtered.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <AnimatePresence mode="popLayout">
@@ -207,6 +220,7 @@ export default function Projects() {
                           window.open(project.link, "_blank", "noopener,noreferrer");
                         } else {
                           setSelectedProject(project);
+                          setGalleryStartIdx(0);
                         }
                       }}
                       initial={{ opacity: 0, scale: 0.95 }}
@@ -250,10 +264,9 @@ export default function Projects() {
                         <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
                           {project.title}
                         </h3>
-                        <ViewButton
-                          label={project.isExternal ? "Visit Website" : ([4].includes(project.id) ? "Watch Video" : "View")}
-                          className="absolute bottom-5 !py-2.5 !px-8 !rounded-md translate-y-4 group-hover:translate-y-0"
-                        />
+                        <button className="absolute bottom-5 bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150 border border-transparent hover:border-white">
+                          {project.isExternal ? "Visit Website" : ([4].includes(project.id) ? "Watch Video" : "View")}
+                        </button>
                       </div>
                     </motion.div>
                   ))}
@@ -303,28 +316,36 @@ export default function Projects() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-[95%] max-w-xl lg:max-w-4xl bg-[#0A374C] rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 flex flex-col items-stretch z-10 border border-dashed border-white/40 max-h-[92vh] overflow-y-auto scrollbar-hide"
+              className="relative w-[95%] max-w-2xl lg:max-w-5xl bg-[#0A374C] rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 flex flex-col items-stretch z-10 border border-dashed border-white/40 max-h-[92vh] overflow-y-auto scrollbar-hide"
             >
-              <div className="flex flex-col lg:grid lg:grid-cols-[5fr_6fr] gap-2 md:gap-4 lg:gap-6 items-stretch">
+              <div className="flex flex-col lg:grid lg:grid-cols-[5.5fr_6.5fr] gap-4 lg:gap-6 items-stretch">
                 {/* Top/Left: Image Section */}
-                <div className="relative w-full h-full min-h-[300px] group">
-                  <div className="absolute top-0 left-10 lg:left-45 z-20">
-                    <div className="bg-[#5EA4A4] text-[#0A374C] text-[10px] lg:text-[12px] px-8 py-2.5 rounded-b-xl shadow-lg font-bold min-w-[120px] text-center tracking-widest capitalize">
+                <div className="relative w-full h-full">
+                  <div className="absolute -top-[2px] left-1/2 -translate-x-1/2 z-20">
+                    <div className="bg-[#5EA4A4] text-[#0A374C] text-[8px] md:text-[10px] lg:text-[12px] px-4 md:px-6 lg:px-8 py-2 md:py-2.5 rounded-b-2xl shadow-lg font-bold min-w-[100px] md:min-w-[120px] text-center tracking-widest capitalize">
                       {selectedProject.badge}
                     </div>
                   </div>
 
-                  <div className="relative rounded-[1.25rem] overflow-hidden border-2 border-white/80 w-full h-full shadow-2xl bg-[#0A374C]/20 flex flex-col justify-center">
+                  <div className="rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full h-full shadow-2xl bg-black/20 flex flex-col justify-center relative group cursor-pointer"
+                    onClick={() => {
+                      if (selectedProject.link && !selectedProject.gallery) {
+                        window.open(selectedProject.link, '_blank', 'noopener,noreferrer');
+                      }
+                    }}
+                  >
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                     />
-                    {/* Modal Video Play Button on Hover */}
+                    {/* Play Button Overlay */}
                     {[1, 2, 3, 4, 5, 7].includes(selectedProject.id) && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center shadow-2xl transform scale-90 group-hover:scale-100 transition-all duration-300">
-                          <Play className="w-8 h-8 md:w-10 md:h-10 text-[#0A374C] fill-[#0A374C] ml-1" />
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-white/90 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-[#5EA4A4] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
                         </div>
                       </div>
                     )}
@@ -332,27 +353,33 @@ export default function Projects() {
                 </div>
 
                 {/* Bottom/Right: Content Section */}
-                <div className="flex flex-col py-0">
-                  <h3 className="text-base mt-2 lg:mt-0 md:text-lg font-bold text-white font-heading leading-snug mb-2 lg:mb-4">
+                <div className="flex flex-col py-2">
+                  <h3 className="text-xl md:text-lg lg:text-xl font-bold text-white font-heading leading-snug mb-3 lg:mb-4">
                     {selectedProject.title}
                   </h3>
 
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     {selectedProject.client && (
                       <p className="flex items-start gap-2">
-                        <span className="font-bold whitespace-nowrap text-white text-[10px] md:text-xs tracking-wide">• Client :</span>
-                        <span className="text-white/90 text-[10px] md:text-xs leading-relaxed">{selectedProject.client}</span>
+                        <span className="font-bold whitespace-nowrap text-white text-xs md:text-sm tracking-wide">• Client :</span>
+                        <span className="text-white/90 text-[12px] md:text-[13px] leading-relaxed">{selectedProject.client}</span>
                       </p>
                     )}
                     {selectedProject.location && (
                       <p className="flex items-start gap-2">
-                        <span className="font-bold whitespace-nowrap text-white text-[10px] md:text-xs tracking-wide">• Location:</span>
-                        <span className="text-white/90 text-[10px] md:text-xs leading-relaxed">{selectedProject.location}</span>
+                        <span className="font-bold whitespace-nowrap text-white text-xs md:text-sm tracking-wide">• Location:</span>
+                        <span className="text-white/90 text-[12px] md:text-[13px] leading-relaxed">{selectedProject.location}</span>
+                      </p>
+                    )}
+                    {selectedProject.year && (
+                      <p className="flex items-start gap-2">
+                        <span className="font-bold whitespace-nowrap text-white text-xs md:text-sm tracking-wide">• Year:</span>
+                        <span className="text-white/90 text-[12px] md:text-[13px] leading-relaxed">{selectedProject.year}</span>
                       </p>
                     )}
                     {selectedProject.overview && (
-                      <div className="pt-0.5">
-                        <p className="text-white/90 text-[10px] md:text-xs leading-[1.4] font-light">
+                      <div className="pt-1">
+                        <p className="text-white/90 text-[12px] md:text-[13px] leading-[1.5] font-light">
                           <span className="font-bold text-white mr-2 shadow-sm font-sans tracking-wide">• Project Overview:</span>
                           {selectedProject.overview}
                         </p>
@@ -362,10 +389,13 @@ export default function Projects() {
 
                   {/* Optional Video Button */}
                   {!selectedProject.gallery && (
-                    <div className="mt-4 lg:mt-6 flex justify-center lg:justify-start">
-                      <WatchVideoButton
+                    <div className="mt-6 lg:mt-8 flex justify-center lg:justify-start">
+                      <button
                         onClick={() => window.open(selectedProject.link, "_blank", "noopener,noreferrer")}
-                      />
+                        className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-2.5 px-10 rounded-xl transition-colors shadow-xl text-[9px] md:text-[10px] tracking-[0.2em] transform active:scale-95 uppercase border border-transparent hover:border-white"
+                      >
+                        Watch Video
+                      </button>
                     </div>
                   )}
 
@@ -374,16 +404,24 @@ export default function Projects() {
                     <div className="mt-4 lg:mt-6 relative w-full">
                       <div className="relative flex items-center w-full">
                         {/* Thumbnail Prev Button */}
-                        <button className="absolute -left-3 lg:-left-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#114057]/90 backdrop-blur flex items-center justify-center text-[#5EA4A4] border border-[#5EA4A4]/40 hover:bg-[#0A374C] transition-colors z-20 shadow-xl">
+                        <button 
+                          onClick={handlePrevThumbnails}
+                          disabled={galleryStartIdx === 0}
+                          className={`absolute -left-3 lg:-left-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full backdrop-blur flex items-center justify-center border shadow-xl transition-colors z-20 ${
+                            galleryStartIdx === 0 
+                              ? 'bg-gray-400/50 text-gray-300 border-gray-300/40 cursor-not-allowed' 
+                              : 'bg-[#114057]/90 text-[#5EA4A4] border-[#5EA4A4]/40 hover:bg-[#0A374C]'
+                          }`}
+                        >
                           <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                         </button>
 
                         <div className="grid grid-cols-3 gap-3 lg:gap-4 w-full px-2">
-                          {selectedProject.gallery.slice(0, 3).map((img, idx) => (
+                          {selectedProject.gallery.slice(galleryStartIdx, galleryStartIdx + 3).map((img, idx) => (
                             <motion.div
-                              key={idx}
+                              key={galleryStartIdx + idx}
                               whileHover={{ scale: 1.05 }}
-                              onClick={() => setActiveGalleryIdx(idx)}
+                              onClick={() => setActiveGalleryIdx(galleryStartIdx + idx)}
                               className="relative cursor-pointer group w-full"
                             >
                               {/* Taller thumbnail frame */}
@@ -395,7 +433,15 @@ export default function Projects() {
                         </div>
 
                         {/* Thumbnail Next Button */}
-                        <button className="absolute -right-3 lg:-right-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#114057]/90 backdrop-blur flex items-center justify-center text-[#5EA4A4] border border-[#5EA4A4]/40 hover:bg-[#0A374C] transition-colors z-20 shadow-xl">
+                        <button 
+                          onClick={handleNextThumbnails}
+                          disabled={galleryStartIdx + 3 >= selectedProject.gallery.length}
+                          className={`absolute -right-3 lg:-right-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full backdrop-blur flex items-center justify-center border shadow-xl transition-colors z-20 ${
+                            galleryStartIdx + 3 >= selectedProject.gallery.length
+                              ? 'bg-gray-400/50 text-gray-300 border-gray-300/40 cursor-not-allowed'
+                              : 'bg-[#114057]/90 text-[#5EA4A4] border-[#5EA4A4]/40 hover:bg-[#0A374C]'
+                          }`}
+                        >
                           <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                         </button>
                       </div>

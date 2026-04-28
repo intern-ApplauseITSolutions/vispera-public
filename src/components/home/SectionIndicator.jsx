@@ -47,31 +47,58 @@ export default function SectionIndicator() {
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div className="sticky top-[88px] z-40 w-full bg-transparent hidden lg:block">
-      <div className="w-full px-8 md:px-16 py-6">
-        <div className="relative flex items-end justify-between w-full">
-          {/* Subtle Progress Line */}
-          <div className="absolute inset-x-0 bottom-[6px] h-[0.5px] bg-[#0A374C]/10 w-full" />
+  const handleClick = (e, href) => {
+    e.preventDefault();
+    
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
 
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const navbarHeight = 88; // navbar height
+      const indicatorHeight = 8; // section indicator height
+      const offset = navbarHeight + indicatorHeight + 20; // extra 20px padding
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
+  return (
+    <div className="sticky top-[88px] z-40 w-full bg-transparent hidden lg:block relative">
+      {/* Full-width line - outside the padding */}
+      <div className="absolute left-0 right-0 top-[4px] h-[0.5px] bg-[#0A374C]/10" />
+      
+      {/* Dots container with padding */}
+      <div className="w-full px-8 md:px-16">
+        <div className="relative flex items-start justify-between w-full">
           {sections.map((section, i) => (
             <a
               key={i}
               href={section.href}
-              className="relative z-10 flex flex-col items-center gap-2 group"
+              onClick={(e) => handleClick(e, section.href)}
+              className="relative z-10 flex flex-col items-center gap-1 group cursor-pointer"
             >
+              {/* Dot positioned on top of the line */}
               <div className={clsx(
-                "rounded-full transition-all duration-300",
+                "rounded-full transition-all duration-300 relative w-2 h-2",
                 activeSection === section.label
-                  ? "w-2.5 h-2.5 bg-[#5EA4A4] shadow-[0_0_10px_rgba(94,164,164,0.4)]"
-                  : "w-2 h-2 bg-gray-200 group-hover:bg-[#5EA4A4]"
+                  ? "bg-[#5EA4A4]"
+                  : "bg-gray-200 group-hover:bg-[#5EA4A4]"
               )} />
 
+              {/* Label below dot */}
               <span className={clsx(
-                "text-sm uppercase tracking-widest transition-all duration-300",
-                activeSection === section.label
-                  ? "text-[#A7B0B5] opacity-100"
-                  : "text-[#A7B0B5] opacity-0 group-hover:opacity-100"
+                "text-[10px] uppercase tracking-widest transition-all duration-300 whitespace-nowrap",
+                "text-[#0A374C] opacity-0 group-hover:opacity-100"
               )}>
                 {section.label}
               </span>

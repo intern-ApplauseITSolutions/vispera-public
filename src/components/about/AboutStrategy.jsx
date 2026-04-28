@@ -6,7 +6,7 @@ export default function AboutStrategy() {
     <section className="py-3 md:py-5" style={{ backgroundColor: "#F7F5F2" }}>
       <div className="max-w-[1550px] mx-auto px-6 md:px-8 lg:px-10 mt-12 mb-12">
         <div
-          className="relative w-full lg:rounded-[12px] lg:px-16 lg:pt-6 lg:pb-0 lg:border-[5px] border-secondary/30 lg:shadow-md lg:bg-secondary/10 lg:min-h-[290px] flex items-center"
+          className="relative w-full lg:rounded-[12px] lg:px-16 lg:pt-2 lg:pb-0 lg:border-[5px] border-secondary/30 lg:shadow-md lg:bg-secondary/10 lg:min-h-[200px] flex items-center"
         >
           {/* Inner Content Wrapper */}
           <div className="relative z-10 flex flex-col md:flex-row lg:flex-row items-stretch lg:items-center justify-between w-full gap-6 md:gap-8 lg:gap-0">

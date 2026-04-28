@@ -20,7 +20,7 @@ export default function SectionHeading({
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-secondary font-bold tracking-[0.3em] text-[10px] md:text-sm uppercase mb-2"
+          className="text-secondary font-bold tracking-[0.1em] text-[10px] md:text-sm uppercase mb-2"
         >
           {subtitle}
         </motion.p>

@@ -45,7 +45,7 @@ export default function Testimonials({
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section id="testimonials" className={clsx('pb-8 md:pb-10 lg:pb-28 pt-0 overflow-hidden', className)} style={{ backgroundColor: '#F3F0EF' }}>
+    <section id="testimonials" className={clsx('pb-8 md:pb-10 lg:pb-28 pt-6 md:pt-8 lg:pt-0 overflow-hidden', className)} style={{ backgroundColor: '#F3F0EF' }}>
       <div className="w-full">
         {/* Section Heading - Mobile */}
         <div className="lg:hidden mb-6 md:mb-8 px-6">
@@ -80,15 +80,15 @@ export default function Testimonials({
               </div>
             </div>
             <p
-              className="text-white text-sm leading-5 opacity-90 font-medium tracking-[0.02em] text-justify"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="text-white text-sm leading-5 opacity-90 font-medium text-justify"
+              style={{ fontFamily: "'Inter', sans-serif", wordSpacing: '-0.15em' }}
             >
               We Work Closely With Organizations To Craft Authentic Visual Stories That Connect, Inspire, And Create Meaningful Impact.
             </p>
           </div>
 
           {/* Right Side - Interactive Carousel (Desktop/Tablet) */}
-          <div className="hidden md:block w-full lg:w-2/3 relative pr-6 md:pr-8 lg:pr-12">
+          <div className="hidden md:block w-full lg:w-2/3 relative px-6 md:px-12 lg:pr-12 lg:pl-0">
             <div className="flex flex-col md:flex-row gap-8 lg:gap-8 items-center h-full">
 
               {/* Image Box with Floating Overlap */}

@@ -21,7 +21,7 @@ const services = [
 export default function Services() {
   const navigate = useNavigate();
   return (
-    <section id="services" className="py-2 md:py-8" style={{ backgroundColor: "#F7F5F2" }}>
+    <section id="services" className="py-2 md:py-4" style={{ backgroundColor: "#F7F5F2" }}>
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12">
 
         <div className="flex flex-col items-center mb-10 relative">
@@ -64,7 +64,7 @@ export default function Services() {
         </div>
 
         {/* Row 1 — 4 cards in one line - Pushed More Left/Right */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6 px-8 sm:px-0">
           {services.slice(0, 4).map((s, i) => (
             <ServiceCard key={s.id} service={s} delay={i * 0.08} navigate={navigate} />
           ))}
@@ -95,18 +95,18 @@ function ServiceCard({ service, delay = 0, navigate }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay }}
-      className="bg-white rounded-2xl p-6 flex flex-col items-center gap-4 hover:shadow-md transition-shadow duration-300 cursor-pointer"
+      className="bg-white rounded-2xl p-4 md:p-6 flex flex-col items-center gap-3 md:gap-4 hover:shadow-md transition-shadow duration-300 cursor-pointer"
       style={{ border: "1px solid #e8e4dc" }}
       onClick={handleClick}
     >
-      <div className="w-full h-40 flex items-center justify-center">
+      <div className="w-full h-32 md:h-40 flex items-center justify-center">
         <img
           src={service.img}
           alt={service.title}
           className="w-full h-full object-contain"
         />
       </div>
-      <p className="text-center text-xs font-bold text-[#0A374C] uppercase leading-snug tracking-wide">
+      <p className="text-center text-[10px] md:text-xs font-bold text-[#0A374C] uppercase leading-snug tracking-wide">
         {service.title}
       </p>
     </motion.div>

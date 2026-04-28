@@ -4,8 +4,8 @@ import personImg from "../../assets/images/quote-img-1.png";
 
 export default function Manifesto() {
   return (
-    <section className="py-6 bg-bg-light">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-0">
+    <section className="py-16 bg-[#F7F5F2]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 xl:px-24">
         
         <div className="relative flex items-center justify-start md:justify-between 
           bg-[#d9f3f2] 
@@ -18,11 +18,11 @@ export default function Manifesto() {
         ">
 
           {/* LEFT IMAGE - Hidden on Tab/Mobile */}
-          <div className="hidden lg:flex w-[20%] h-full justify-start items-end pointer-events-none relative">
+          <div className="hidden lg:flex w-[15%] h-full justify-start items-end pointer-events-none relative">
             <img
               src={illustrationImg}
               alt="Illustration"
-              className="absolute bottom-0 left-0 h-[120%] lg:h-[130%] object-contain object-bottom translate-y-[2px]"
+              className="absolute bottom-0 left-0 h-[120%] lg:h-[130%] object-contain object-bottom translate-y-[-20px]"
             />
           </div>
 
@@ -41,7 +41,7 @@ export default function Manifesto() {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="absolute right-[-6px] bottom-[-6px] md:relative md:right-auto md:bottom-0 w-[180px] sm:w-[220px] md:w-[25%] lg:w-[20%] h-[200px] sm:h-[245px] md:h-full pointer-events-none z-10 shrink-0">
+          <div className="absolute right-[-6px] bottom-[-12px] md:relative md:right-auto md:bottom-0 w-[180px] sm:w-[220px] md:w-[25%] lg:w-[8%] h-[200px] sm:h-[245px] md:h-full pointer-events-none z-10 shrink-0">
             <img
               src={personImg}
               alt="Photographer"

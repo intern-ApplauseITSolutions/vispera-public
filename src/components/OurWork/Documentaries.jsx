@@ -76,6 +76,7 @@ const documentaries = [
 export default function Documentaries({ searchQuery = "" }) {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeGalleryIdx, setActiveGalleryIdx] = useState(null);
+  const [galleryStartIdx, setGalleryStartIdx] = useState(0);
   const [showMore, setShowMore] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 4;
@@ -121,6 +122,12 @@ export default function Documentaries({ searchQuery = "" }) {
     }
   };
 
+  // Reset gallery start index when modal opens
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setGalleryStartIdx(0);
+  };
+
   const handleNextGallery = () => {
     if (selectedProject?.gallery) {
       setActiveGalleryIdx((prev) => (prev + 1) % selectedProject.gallery.length);
@@ -130,6 +137,18 @@ export default function Documentaries({ searchQuery = "" }) {
   const handlePrevGallery = () => {
     if (selectedProject?.gallery) {
       setActiveGalleryIdx((prev) => (prev - 1 + selectedProject.gallery.length) % selectedProject.gallery.length);
+    }
+  };
+
+  const handleNextThumbnails = () => {
+    if (selectedProject?.gallery && galleryStartIdx + 3 < selectedProject.gallery.length) {
+      setGalleryStartIdx(galleryStartIdx + 1);
+    }
+  };
+
+  const handlePrevThumbnails = () => {
+    if (galleryStartIdx > 0) {
+      setGalleryStartIdx(galleryStartIdx - 1);
     }
   };
 
@@ -231,6 +250,7 @@ export default function Documentaries({ searchQuery = "" }) {
                       window.open(project.link, "_blank", "noopener,noreferrer");
                     } else {
                       setSelectedProject(project);
+                      setGalleryStartIdx(0);
                     }
                   }}
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -500,18 +520,32 @@ export default function Documentaries({ searchQuery = "" }) {
               <div className="flex flex-col lg:grid lg:grid-cols-[5.5fr_6.5fr] gap-4 lg:gap-6 items-stretch">
                 {/* Top/Left: Image Section */}
                 <div className="relative w-full h-full">
-                  <div className="absolute -top-[2px] left-6 lg:left-10 z-20">
-                    <div className="bg-[#5EA4A4] text-[#0A374C] text-[10px] lg:text-[12px] px-8 py-2.5 rounded-b-2xl shadow-lg font-bold min-w-[120px] text-center tracking-widest uppercase">
+                  <div className="absolute -top-[2px] left-1/2 -translate-x-1/2 z-20">
+                    <div className="bg-[#5EA4A4] text-[#0A374C] text-[8px] md:text-[10px] lg:text-[12px] px-4 md:px-6 lg:px-8 py-2 md:py-2.5 rounded-b-2xl shadow-lg font-bold min-w-[100px] md:min-w-[120px] text-center tracking-widest uppercase">
                       {selectedProject.badge}
                     </div>
                   </div>
 
-                  <div className="rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full h-full shadow-2xl bg-black/20 flex flex-col justify-center">
+                  <div className="rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full h-full shadow-2xl bg-black/20 flex flex-col justify-center relative group cursor-pointer"
+                    onClick={() => {
+                      if (selectedProject.link) {
+                        window.open(selectedProject.link, '_blank', 'noopener,noreferrer');
+                      }
+                    }}
+                  >
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
                       className="w-full h-full object-cover"
                     />
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-white/90 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                        <svg className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-[#5EA4A4] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -557,7 +591,7 @@ export default function Documentaries({ searchQuery = "" }) {
                         href={selectedProject.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-2.5 px-10 rounded-xl transition-all shadow-xl text-[9px] md:text-[10px] tracking-[0.2em] transform active:scale-95 uppercase inline-block"
+                        className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-2.5 px-10 rounded-xl transition-colors shadow-xl text-[9px] md:text-[10px] tracking-[0.2em] transform active:scale-95 uppercase inline-block border border-transparent hover:border-white"
                       >
                         Watch Video
                       </a>
@@ -566,7 +600,7 @@ export default function Documentaries({ searchQuery = "" }) {
                           href={selectedProject.part2Link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-2.5 px-10 rounded-xl transition-all shadow-xl text-[9px] md:text-[10px] tracking-[0.2em] transform active:scale-95 uppercase inline-block"
+                          className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-2.5 px-10 rounded-xl transition-colors shadow-xl text-[9px] md:text-[10px] tracking-[0.2em] transform active:scale-95 uppercase inline-block border border-transparent hover:border-white"
                         >
                           Watch Part 2
                         </a>
@@ -579,16 +613,24 @@ export default function Documentaries({ searchQuery = "" }) {
                     <div className="mt-6 lg:mt-8 relative w-full">
                       <div className="relative flex items-center w-full">
                         {/* Thumbnail Prev Button */}
-                        <button className="absolute -left-3 lg:-left-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#114057]/90 backdrop-blur flex items-center justify-center text-[#5EA4A4] border border-[#5EA4A4]/40 hover:bg-[#0A374C] transition-colors z-20 shadow-xl">
+                        <button 
+                          onClick={handlePrevThumbnails}
+                          disabled={galleryStartIdx === 0}
+                          className={`absolute -left-3 lg:-left-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full backdrop-blur flex items-center justify-center border shadow-xl transition-colors z-20 ${
+                            galleryStartIdx === 0 
+                              ? 'bg-gray-400/50 text-gray-300 border-gray-300/40 cursor-not-allowed' 
+                              : 'bg-[#114057]/90 text-[#5EA4A4] border-[#5EA4A4]/40 hover:bg-[#0A374C]'
+                          }`}
+                        >
                           <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                         </button>
 
                         <div className="grid grid-cols-3 gap-2 lg:gap-3 w-full px-2">
-                          {selectedProject.gallery.slice(0, 3).map((img, idx) => (
+                          {selectedProject.gallery.slice(galleryStartIdx, galleryStartIdx + 3).map((img, idx) => (
                             <motion.div
-                              key={idx}
+                              key={galleryStartIdx + idx}
                               whileHover={{ scale: 1.05 }}
-                              onClick={() => setActiveGalleryIdx(idx)}
+                              onClick={() => setActiveGalleryIdx(galleryStartIdx + idx)}
                               className="relative cursor-pointer group w-full"
                             >
                               {/* Taller thumbnail frame */}
@@ -600,7 +642,15 @@ export default function Documentaries({ searchQuery = "" }) {
                         </div>
 
                         {/* Thumbnail Next Button */}
-                        <button className="absolute -right-3 lg:-right-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#114057]/90 backdrop-blur flex items-center justify-center text-[#5EA4A4] border border-[#5EA4A4]/40 hover:bg-[#0A374C] transition-colors z-20 shadow-xl">
+                        <button 
+                          onClick={handleNextThumbnails}
+                          disabled={galleryStartIdx + 3 >= selectedProject.gallery.length}
+                          className={`absolute -right-3 lg:-right-5 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full backdrop-blur flex items-center justify-center border shadow-xl transition-colors z-20 ${
+                            galleryStartIdx + 3 >= selectedProject.gallery.length
+                              ? 'bg-gray-400/50 text-gray-300 border-gray-300/40 cursor-not-allowed'
+                              : 'bg-[#114057]/90 text-[#5EA4A4] border-[#5EA4A4]/40 hover:bg-[#0A374C]'
+                          }`}
+                        >
                           <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                         </button>
                       </div>

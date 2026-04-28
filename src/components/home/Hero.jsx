@@ -1,35 +1,23 @@
-import heroImg from "../../assets/images/hero-section-banner.png";
-import heroTabletImg from "../../assets/images/Tablet/herosectionbanner.png";
-// Explicitly importing mobile banner as requested
-import heroMobileImg from "../../assets/images/Mobile/herosectionbanner.png";
+import heroVideo from "../../assets/images/Hero/Hero.mp4";
 
 export default function Hero() {
   return (
-    <section className="bg-white pt-[104px] lg:pt-[72px] pb-12 relative">
+    <section className="pt-[90px] lg:pt-[90px] pb-12 relative" style={{ backgroundColor: "#F7F5F2" }}>
 
-      {/* Hero image container */}
+      {/* Hero video container */}
       <div className="px-8 md:px-16 mt-2 relative group">
         <div className="relative rounded-2xl w-full">
           <div className="relative rounded-2xl overflow-hidden w-full group">
-            {/* Desktop Image */}
-            <img
-              src={heroImg}
-              alt="Vispera Studios"
-              className="w-full h-auto hidden lg:block"
+            {/* Video replacing all images */}
+            <video
+              src={heroVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto max-h-[300px] md:max-h-[400px] lg:max-h-[450px] object-cover"
             />
-            {/* Tablet Image */}
-            <img
-              src={heroTabletImg}
-              alt="Vispera Studios"
-              className="w-full h-auto hidden md:block lg:hidden"
-            />
-            {/* Mobile Image */}
-            <img
-              src={heroMobileImg}
-              alt="Vispera Studios"
-              className="w-full h-auto block md:hidden"
-            />
-            {/* Indicated dots at bottom left of the image */}
+            {/* Indicated dots at bottom left of the video */}
             <div className="absolute left-6 bottom-16 md:bottom-20 flex flex-col gap-3 z-10">
               <div className="w-2 h-2 rounded-full bg-[#5EA4A4] shadow-[0_0_8px_rgba(94,164,164,0.6)]" />
               <div className="w-2 h-2 rounded-full bg-white/60" />
@@ -52,11 +40,10 @@ export default function Hero() {
             >
               {/* Desktop/Tablet version */}
               <p
-                className="hidden md:block text-center text-[#1a1a1a] align-middle"
+                className="hidden md:block text-center text-[#1a1a1a] align-middle md:text-[16px] lg:text-[22px]"
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 800,
-                  fontSize: '22px',
                   lineHeight: '20px',
                   letterSpacing: '0.04em',
                   textTransform: 'capitalize'

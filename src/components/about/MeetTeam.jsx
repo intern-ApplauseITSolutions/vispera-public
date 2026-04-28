@@ -108,8 +108,7 @@ function TeamCard({ member, delay = 0, onClick, index = 0 }) {
       onClick={onClick}
       className={`
         group relative cursor-pointer transition-all duration-500 hover:shadow-2xl flex flex-col shrink-0
-        w-full sm:w-[280px] md:w-[calc(33.333%-16px)] lg:w-[280px] aspect-[336/381] p-2 border-[1.5px] border-[#0A374C]/90 bg-white rounded-none
-        ${isSecondRow ? 'md:w-[calc(50%-12px)] lg:w-[280px]' : 'md:w-[calc(33.333%-16px)]'}
+        w-full sm:w-[280px] md:w-[280px] aspect-[336/381] p-2 border-[1.5px] border-[#0A374C]/90 bg-white rounded-none
       `}
     >
       <div className="relative overflow-hidden flex-1 h-full w-full mb-2">
