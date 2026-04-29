@@ -13,7 +13,7 @@ export default function Contact() {
       {/* Subtle Texture Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:24px_24px]" />
       
-      <div className="w-full px-4 sm:px-12 md:px-16 lg:px-24 relative z-10">
+      <div className="w-full px-4 sm:px-12 md:px-16 lg:px-12 xl:px-16 relative z-10">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-end">
 
@@ -40,7 +40,7 @@ export default function Contact() {
 
             {/* Info card (Quick Contact) */}
             <div
-              className="rounded-[2rem] p-4 sm:p-6 space-y-2 lg:space-y-1.5 xl:space-y-2 border-2 border-[#5EA4A4] shadow-sm flex flex-col justify-between w-full md:w-[340px] lg:w-[280px] xl:w-[340px]"
+              className="rounded-[2rem] p-4 sm:p-6 space-y-2 lg:space-y-1.5 xl:space-y-2 border-2 border-[#5EA4A4] shadow-sm flex flex-col justify-between w-full md:w-[340px] lg:w-[310px] xl:w-[360px]"
               style={{ 
                 backgroundColor: "rgba(255, 255, 255, 0.8)",
                 height: "330px"
@@ -56,8 +56,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="overflow-hidden">
-                    <p className="text-[#5EA4A4] text-[10px] font-bold uppercase tracking-widest leading-tight">Main Office</p>
-                    <p className="text-[#0A374C] text-xs font-bold break-words leading-tight mt-0.5">+91 9767346346</p>
+                    <p className="text-[#5EA4A4] text-[12px] font-bold uppercase tracking-widest leading-tight">Main Office</p>
+                    <p className="text-[#0A374C] text-[14px] break-words leading-tight mt-0.5">+91 9767346346</p>
                   </div>
                 </div>
               </div>
@@ -72,8 +72,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="overflow-hidden">
-                    <p className="text-[#5EA4A4] text-[10px] font-bold uppercase tracking-widest leading-tight">Mail to</p>
-                    <p className="text-[#0A374C] text-xs font-bold break-all leading-tight mt-0.5">contact@visperastudios.in</p>
+                    <p className="text-[#5EA4A4] text-[12px] font-bold uppercase tracking-widest leading-tight">Mail to</p>
+                    <p className="text-[#0A374C] text-[14px] break-all leading-tight mt-0.5">contact@visperastudios.in</p>
                   </div>
                 </div>
               </div>
@@ -88,8 +88,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="overflow-hidden">
-                    <p className="text-[#5EA4A4] text-[10px] font-bold uppercase tracking-widest leading-tight">Our Office</p>
-                    <p className="text-[#0A374C] text-xs font-bold leading-tight break-words mt-0.5">
+                    <p className="text-[#5EA4A4] text-[12px] font-bold uppercase tracking-widest leading-tight">Our Office</p>
+                    <p className="text-[#0A374C] text-[14px] leading-tight break-words mt-0.5">
                       Art Construction Ro.Ho. 08, Veer Savarkar Nagar, Sinnar, Maharashtra, 422103
                     </p>
                   </div>
@@ -106,7 +106,7 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col items-center md:col-span-1 lg:col-span-1 order-1 md:order-2"
           >
-            <div className="relative rounded-[2rem] overflow-hidden w-full max-w-[220px] md:max-w-[250px] lg:max-w-[265px] xl:max-w-[290px]" style={{ height: "400px" }}>
+            <div className="relative rounded-[2rem] overflow-hidden w-full max-w-[305px] md:max-w-[345px] lg:max-w-[385px] xl:max-w-[405px] h-[380px] sm:h-[430px] md:h-[470px] lg:h-[500px] xl:h-[520px]">
               <img
                 src={contactImg}
                 alt="Contact Vispera Studios"
@@ -131,13 +131,13 @@ export default function Contact() {
                 Let's Work Together
               </h2>
               <p className="text-[#555] text-sm leading-relaxed mt-4 text-center sm:text-left">
-                Tell us about your project, idea, or story - we'd love to collaborate with you
+              Tell us about your project or idea-we’d love to collaborate. From concept to creation, we turn your vision into meaningful digital experiences.
               </p>
             </div>
 
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="rounded-[2rem] overflow-hidden border-2 border-[#5EA4A4] shadow-sm flex flex-col w-full md:max-w-full lg:w-[340px]"
+              className="rounded-[2rem] overflow-hidden border-2 border-[#5EA4A4] shadow-sm flex flex-col w-full md:max-w-full lg:w-[360px] xl:w-[380px]"
               style={{ 
                 backgroundColor: "rgba(255, 255, 255, 0.8)",
                 height: "330px"
@@ -150,24 +150,24 @@ export default function Contact() {
                   { icon: "phone", placeholder: "Mobile Number*" },
                   { icon: "file", placeholder: "Subject*" },
                 ].map(({ icon, placeholder }, i) => (
-                  <div key={i} className="flex items-center gap-3 sm:gap-4 px-4 sm:px-8 py-3 border-b border-gray-100">
+                  <div key={i} className="flex items-center gap-2.5 sm:gap-3 px-4 sm:px-6 py-3 border-b border-gray-100">
                     <FieldIcon type={icon} />
                     <input
                       type="text"
                       placeholder={placeholder}
-                      className="w-full text-[15px] text-[#0A374C] font-semibold placeholder-gray-400 focus:outline-none bg-transparent"
+                      className="w-full text-[16px] text-[#0A374C] font-semibold placeholder:text-[13px] sm:placeholder:text-[14px] placeholder-gray-400 focus:outline-none bg-transparent"
                     />
                   </div>
                 ))}
 
-                <div className="flex items-start gap-3 sm:gap-4 px-4 sm:px-8 py-2 border-b border-gray-100">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.5" className="w-5 h-5 mt-0.5 shrink-0">
+                <div className="flex items-start gap-2.5 sm:gap-3 px-4 sm:px-6 py-2 border-b border-gray-100">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.5" className="w-4 h-4 mt-1 shrink-0">
                     <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
                   </svg>
                   <textarea
                     rows={2}
                     placeholder="Your Message..."
-                    className="w-full text-[15px] text-[#0A374C] font-semibold placeholder-gray-400 focus:outline-none bg-transparent resize-none"
+                    className="w-full text-[16px] text-[#0A374C] font-semibold placeholder:text-[13px] sm:placeholder:text-[14px] placeholder-gray-400 focus:outline-none bg-transparent resize-none"
                   />
                 </div>
               </div>
@@ -190,7 +190,7 @@ export default function Contact() {
 }
 
 function FieldIcon({ type }) {
-  const cls = "w-4 h-4 shrink-0";
+  const cls = "w-[15px] h-[15px] shrink-0";
   const s = "#9ca3af";
   if (type === "user") return (
     <svg viewBox="0 0 24 24" fill="none" stroke={s} strokeWidth="1.5" className={cls}>

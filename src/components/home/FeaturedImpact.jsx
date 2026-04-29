@@ -73,14 +73,12 @@ export default function FeaturedImpact() {
           >
             FEATURED IMPACT
           </p>
-          <div className="relative inline-block mt-[-8px]">
+          <div className="relative inline-block mt-[-4px] md:mt-[-8px] px-4 sm:px-0">
             <h3 
-              className="text-[#0A374C] relative z-10 text-center"
+              className="text-[#0A374C] relative z-10 text-center text-[26px] sm:text-[28px] md:text-[32px] leading-[34px] sm:leading-[38px] md:leading-[42px]"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 600,
-                fontSize: "32px",
-                lineHeight: "42px",
                 letterSpacing: "0.02em",
                 textAlign: "center",
                 verticalAlign: "middle"
@@ -88,7 +86,7 @@ export default function FeaturedImpact() {
             >
               Stories That Matter
             </h3>
-            <div className="absolute top-0 -right-5 w-7 h-7 opacity-80 z-0 pointer-events-none">
+            <div className="absolute top-0 -right-3 w-7 h-7 opacity-80 z-0 pointer-events-none">
               <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
@@ -176,7 +174,7 @@ export default function FeaturedImpact() {
                     </div>
                   </div>
 
-                  <div className="mt-4 flex justify-center lg:justify-start pb-12 md:pb-0">
+                  <div className="mt-4 flex justify-center lg:justify-start pb-16 md:pb-0">
                     <WatchVideoButton 
                       onClick={() => window.open(story.link, "_blank", "noopener,noreferrer")}
                     />

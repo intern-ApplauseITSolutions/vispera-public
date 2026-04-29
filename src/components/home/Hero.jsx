@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="pt-[90px] lg:pt-[90px] pb-12 relative" style={{ backgroundColor: "#F7F5F2" }}>
 
       {/* Hero video container */}
-      <div className="px-8 md:px-16 mt-2 relative group">
+      <div className="px-4 md:px-16 mt-2 relative group">
         <div className="relative rounded-2xl w-full">
           <div className="relative rounded-2xl overflow-hidden w-full group">
             {/* Video replacing all images */}
@@ -15,14 +15,8 @@ export default function Hero() {
               loop
               muted
               playsInline
-              className="w-full h-auto max-h-[300px] md:max-h-[400px] lg:max-h-[450px] object-cover"
+              className="w-full h-auto max-h-[340px] md:max-h-[400px] lg:max-h-[450px] object-cover"
             />
-            {/* Indicated dots at bottom left of the video */}
-            <div className="absolute left-6 bottom-16 md:bottom-20 flex flex-col gap-3 z-10">
-              <div className="w-2 h-2 rounded-full bg-[#5EA4A4] shadow-[0_0_8px_rgba(94,164,164,0.6)]" />
-              <div className="w-2 h-2 rounded-full bg-white/60" />
-              <div className="w-2 h-2 rounded-full bg-white/60" />
-            </div>
           </div>
 
           {/* Overlay on the edge of the hero banner */}

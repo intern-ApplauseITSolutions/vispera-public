@@ -43,22 +43,19 @@ export default function Awards() {
           >
             AWARDS
           </p>
-          <div className="relative inline-block mt-1">
+          <div className="relative w-full sm:w-auto max-w-[280px] sm:max-w-none sm:inline-block mt-[-4px] md:mt-[-8px] px-4 sm:px-0">
             <h2
-              className="text-[#0A374C] relative z-10 text-center"
+              className="text-[#0A374C] relative z-10 text-center text-[24px] sm:text-[28px] md:text-[32px] leading-[30px] sm:leading-[38px] md:leading-[42px]"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontWeight: 600,
-                fontSize: "28px",
-                mdFontSize: "32px", // CSS handles this via @media usually, I'll use reactive values or just classes
-                lineHeight: "42px",
                 letterSpacing: "0.02em",
                 textAlign: "center"
               }}
             >
               Recognized for Our Work
             </h2>
-            <div className="absolute top-0 -right-5 w-7 h-7 opacity-80 z-0 pointer-events-none">
+            <div className="absolute top-0 right-2 sm:-right-5 w-7 h-7 opacity-80 z-0 pointer-events-none">
               <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
@@ -94,7 +91,7 @@ export default function Awards() {
             </motion.div>
 
             {/* Trophy Cards Section - Right on Desktop, Top on Mobile/Tab */}
-            <div className="flex flex-col md:flex-row lg:flex-nowrap justify-center gap-20 md:gap-4 lg:gap-6 items-center w-full lg:w-3/5 order-1 lg:order-2 md:mt-[10px] lg:mt-0 px-2 lg:px-0">
+            <div className="flex flex-col md:flex-row lg:flex-nowrap justify-center gap-12 md:gap-4 lg:gap-6 items-center w-full lg:w-3/5 order-1 lg:order-2 md:mt-[10px] lg:mt-0 px-2 lg:px-0">
               {awards.map((award, index) => (
                 <motion.div
                   key={award.id}

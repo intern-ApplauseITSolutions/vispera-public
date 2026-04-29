@@ -98,7 +98,7 @@ export default function Navbar() {
               <div className="flex justify-start">
                 <StartProjectButton 
                   variant="dark"
-                  className="text-[9px] py-2 px-6"
+                  className="text-[10px] py-2.5 px-8"
                   onClick={() => setIsMobileMenuOpen(false)}
                 />
               </div>

@@ -38,11 +38,11 @@ export default function About({ showButton = true }) {
 
             {/* Mobile Image Stack (Matches Figma) */}
             <div className="relative z-10 block md:hidden mb-4 mt-6 w-full px-4 text-center">
-              <div className="relative inline-block w-full max-w-[280px] mx-auto">
+              <div className="relative inline-block w-full max-w-[240px] mx-auto">
                 <div className="w-full aspect-square rounded-full overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] bg-white">
                   <img src={aboutMobileImg} className="w-full h-full object-cover scale-110" alt="Vispera mobile workspace" />
                 </div>
-                <img src={aboutGroupImg} className="absolute -bottom-6 -left-2 w-28 object-contain z-20" alt="Clapboard" />
+                <img src={aboutGroupImg} className="absolute -bottom-5 -left-1 w-24 object-contain z-20" alt="Clapboard" />
               </div>
             </div>
           </motion.div>
