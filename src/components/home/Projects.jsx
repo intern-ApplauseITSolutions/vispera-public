@@ -254,14 +254,14 @@ export default function Projects() {
                           borderBottomRightRadius: "12px"
                         }}
                       >
-                        <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight line-clamp-2 w-full text-center">
+                        <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">
                           {project.title}
                         </h3>
                       </div>
 
                       {/* Hover Content Overlay (Centers Title & Button) */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 pointer-events-none group-hover:pointer-events-auto">
-                        <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                        <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100 max-w-full break-words">
                           {project.title}
                         </h3>
                         <button className="absolute bottom-5 bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150 border border-transparent hover:border-white">

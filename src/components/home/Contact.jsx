@@ -5,7 +5,7 @@ import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-8 md:py-12 relative overflow-hidden" style={{ 
+    <section id="contact" className="py-8 md:py-12 lg:pt-20 xl:pt-12 relative overflow-hidden" style={{ 
       backgroundImage: `url(${sectionBg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
@@ -106,11 +106,11 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col items-center md:col-span-1 lg:col-span-1 order-1 md:order-2"
           >
-            <div className="relative rounded-[2rem] overflow-hidden w-full max-w-[220px] md:max-w-[260px] lg:max-w-[270px] xl:max-w-[300px]" style={{ height: "440px" }}>
+            <div className="relative rounded-[2rem] overflow-hidden w-full max-w-[220px] md:max-w-[250px] lg:max-w-[265px] xl:max-w-[290px]" style={{ height: "400px" }}>
               <img
                 src={contactImg}
                 alt="Contact Vispera Studios"
-                className="w-full h-full object-cover object-center z-10"
+                className="w-full h-full object-contain object-center z-10"
               />
             </div>
           </motion.div>
@@ -175,7 +175,7 @@ export default function Contact() {
               <div className="p-4 sm:p-6 flex justify-start">
                 <button
                   type="submit"
-                  className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-l shadow-lg transition-all duration-300"
+                  className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-lg shadow-lg transition-all duration-300"
                 >
                   Send Message
                 </button>

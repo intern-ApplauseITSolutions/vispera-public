@@ -34,11 +34,11 @@ export default function Navbar() {
       <div className="w-full px-8 md:px-16">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center shrink-0">
+          <Link to="/" className="flex items-center shrink-0 -ml-2">
             <img
               src={logo}
               alt="Vispera Studios"
-              className="w-auto h-[85px] object-contain"
+              className="w-auto h-[70px] object-contain"
             />
           </Link>
 
