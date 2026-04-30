@@ -59,10 +59,10 @@ export default function WhyVispera() {
           >
             {/* Top White Section */}
             <div className="h-[179px] lg:h-[150px] px-8 flex flex-col justify-center text-center">
-              <h3 className="text-[#0A374C] font-body font-bold text-[20px] leading-[28px] mb-2 mt-4">
+              <h3 className="text-[#0A374C] font-body font-bold text-[18px] leading-[26px] mb-2 mt-4">
                 Creative Meets <br /> Strategy.
               </h3>
-              <p className="text-[#5EA4A4] font-body font-medium text-[14px] leading-relaxed">
+              <p className="text-[#5EA4A4] font-body font-medium text-[13px] leading-relaxed">
                 We blend storytelling, design, and digital thinking to craft narratives that truly resonate.
               </p>
             </div>

@@ -3,7 +3,7 @@ import aboutImg from "../../assets/images/about-us-2ndsection.png";
 
 export default function AboutStrategy() {
   return (
-    <section className="py-3 md:py-5" style={{ backgroundColor: "#F7F5F2" }}>
+    <section className="py-3 md:py-5 px-6" style={{ backgroundColor: "#F7F5F2" }}>
       <div className="max-w-[1550px] mx-auto px-6 md:px-8 lg:px-10 mt-12 mb-12">
         <div
           className="relative w-full lg:rounded-[12px] lg:px-16 lg:pt-2 lg:pb-0 lg:border-[5px] border-secondary/30 lg:shadow-md lg:bg-secondary/10 lg:min-h-[200px] flex items-center"

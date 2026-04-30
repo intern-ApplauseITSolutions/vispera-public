@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="w-full px-8 md:px-16">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center shrink-0 -ml-2">
+          <Link to="/" className="flex items-center shrink-0 -ml-6">
             <img
               src={logo}
               alt="Vispera Studios"
@@ -49,7 +49,7 @@ export default function Navbar() {
                 key={link.name}
                 to={link.href}
                 className={`font-semibold transition-colors duration-200 text-[15px] ${
-                  location.pathname === link.href
+                  location.pathname === link.href || (link.href === "/services" && location.pathname.startsWith("/services"))
                     ? "text-[#5EA4A4]"
                     : "text-[#0A374C] hover:text-[#5EA4A4]"
                 }`}

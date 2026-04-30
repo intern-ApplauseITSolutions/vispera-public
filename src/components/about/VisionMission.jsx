@@ -34,7 +34,7 @@ export default function VisionMission() {
             </div>
             
             <div className="relative inline-block mb-3 -mt-6 lg:-mt-10">
-              <h3 className="relative z-10 text-xl lg:text-[22px] font-bold uppercase tracking-[0.25em] font-heading">
+              <h3 className="relative z-10 text-xl lg:text-[22px] font-bold uppercase font-heading">
                 <span className="text-[#0A374C]">OUR</span> <span className="text-[#5EA4A4]">VISION</span>
               </h3>
               <div className="absolute -right-3 -top-1.5 w-7 h-7 opacity-100 pointer-events-none z-0">
@@ -64,7 +64,7 @@ export default function VisionMission() {
             </div>
 
             <div className="relative inline-block mb-3 -mt-6 lg:-mt-10">
-              <h3 className="relative z-10 text-xl lg:text-[22px] font-bold uppercase tracking-[0.25em] font-heading">
+              <h3 className="relative z-10 text-xl lg:text-[22px] font-bold uppercase font-heading">
                 <span className="text-[#0A374C]">OUR</span> <span className="text-[#5EA4A4]">MISSION</span>
               </h3>
               <div className="absolute -right-3 -top-1.5 w-7 h-7 opacity-100 pointer-events-none z-0">

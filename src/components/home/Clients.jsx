@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { ViewAllButton } from "../common";
 import headingBg from "../../assets/images/decoration-heading-bg.svg";
-import cardDecorationBg from "../../assets/images/Group39737.png";
+import cardDecorationBg from "../../assets/images/client logo/clientcamera.svg";
 
 // Import all logos
 import cftiLogo from "../../assets/images/rowf1.png";
@@ -150,14 +150,14 @@ export default function Clients({ hideViewAllButton = false }) {
               viewport={{ once: true }}
               className="col-span-6 bg-[#5EA4A480] border-2 border-[#0A374C] rounded-3xl px-8 py-5 md:px-10 md:py-6 text-center relative shadow-sm scale-100"
             >
-              <p className="text-[#0A374C] text-lg md:text-xl font-medium leading-[1.5]">
+              <p className="text-[#0A374C] text-sm md:text-base font-medium leading-[1.5]">
                 “ Behind every story is a partnership that <br />
                 matters. We've had the privilege of working with <br />
                 organizations that are shaping change, capturing <br />
                 their journeys through visuals that inform, <br />
                 inspire, and connect. ”
               </p>
-              <div className="absolute bottom-2 right-4 md:bottom-2 md:right-2 w-16 h-18 md:w-20 md:h-20 opacity-80">
+              <div className="absolute bottom-2 right-4 md:bottom-3 md:right-3 lg:bottom-4 lg:right-4 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 opacity-80">
                 <img src={cardDecorationBg} alt="" className="w-full h-full object-contain" />
               </div>
             </motion.div>
@@ -212,10 +212,10 @@ export default function Clients({ hideViewAllButton = false }) {
               viewport={{ once: true }}
               className="col-span-6 bg-[#5EA4A4]/40 border-[1.5px] border-[#0A374C] rounded-[1.5rem] px-6 py-8 text-center relative shadow-sm z-10"
             >
-              <p className="text-[#0A374C] text-[15px] font-medium leading-[1.6] italic">
+              <p className="text-[#0A374C] text-[13px] font-medium leading-[1.6] italic">
                 “ Behind every story is a partnership that matters. We've had the privilege of working with organizations that are shaping change, capturing their journeys through visuals that inform, inspire, and connect. ”
               </p>
-              <div className="absolute bottom-2 right-4 w-10 h-10 opacity-10">
+              <div className="absolute bottom-2 right-4 w-8 h-8 sm:w-10 sm:h-10 opacity-10">
                 <img src={cardDecorationBg} alt="" className="w-full h-full object-contain grayscale brightness-0" />
               </div>
             </motion.div>
@@ -269,10 +269,10 @@ export default function Clients({ hideViewAllButton = false }) {
 
           {/* Central Quote Card */}
           <motion.div className="bg-[#5EA4A4]/30 border-2 border-[#0A374C] rounded-2xl px-6 py-8 text-center relative shadow-sm my-2">
-            <p className="text-[#0A374C] text-[12px] font-bold leading-relaxed italic">
+            <p className="text-[#0A374C] text-[11px] font-bold leading-relaxed italic">
               “ Behind every story is a partnership that matters. We've had the privilege of working with organizations that are shaping change, capturing their journeys through visuals that inform, inspire, and connect. ”
             </p>
-            <div className="absolute -bottom-3 -right-2 w-10 h-10 opacity-80 pointer-events-none">
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 sm:w-10 sm:h-10 opacity-80 pointer-events-none">
               <img src={cardDecorationBg} alt="" className="w-full h-full object-contain" />
             </div>
           </motion.div>

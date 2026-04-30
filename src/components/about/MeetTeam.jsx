@@ -122,7 +122,7 @@ function TeamCard({ member, delay = 0, onClick, index = 0 }) {
         <motion.div 
           className="absolute inset-0 bg-[#0A374C]/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out backdrop-blur-[1px]"
         >
-           <div className="w-12 h-12 text-white scale-0 group-hover:scale-100 transition-transform duration-500 delay-100">
+           <div className="w-8 h-8 text-white scale-0 group-hover:scale-100 transition-transform duration-500 delay-100">
              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                <circle cx="12" cy="12" r="3" />

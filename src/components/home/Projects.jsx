@@ -266,7 +266,7 @@ export default function Projects() {
                         <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100 max-w-full break-words font-sans">
                           {project.title}
                         </h3>
-                        <button className="absolute bottom-5 bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150 border border-transparent hover:border-white cursor-pointer">
+                        <button className="absolute bottom-5 bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150 cursor-pointer">
                           {project.isExternal ? "Visit Website" : (opensDirectVideo(project) ? "Watch Video" : "View")}
                         </button>
                       </div>
@@ -491,7 +491,7 @@ export default function Projects() {
               </button>
 
               {/* Main Image */}
-              <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+              <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={selectedProject.gallery[activeGalleryIdx]}
                   alt=""

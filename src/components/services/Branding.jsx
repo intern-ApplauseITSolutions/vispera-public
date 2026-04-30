@@ -43,17 +43,17 @@ export default function Branding() {
           className="w-full h-full object-cover object-left"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A374C]/90 via-[#0A374C]/60 to-transparent flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+          <div className="max-w-7xl mx-auto px-8 md:px-16 w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-[240px] sm:max-w-xs pl-4 sm:pl-6 md:pl-8 pt-4 sm:pt-0"
+              className="max-w-[240px] sm:max-w-xs pl-0 sm:pl-0 md:pl-0 pt-4 sm:pt-0"
             >
               <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl font-bold text-white mb-2 sm:mb-3 leading-tight">
                 Photography And Brand Imaging
               </h1>
-              <p className="text-[9px] sm:text-[10px] md:text-xs text-white/90 leading-relaxed">
+              <p className="text-[10px] sm:text-[11px] md:text-sm text-white/90 leading-relaxed">
                 We create impactful photography that reflects authenticity, emotion, and purpose.
                 From on-ground documentation to brand visuals, our images are crafted to connect and
                 communicate effectively.
@@ -64,7 +64,7 @@ export default function Branding() {
       </div>
 
       {/* Back Button */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 py-6 sm:py-8">
         <button
           onClick={() => navigate("/services")}
           className="flex items-center gap-2 text-[#5EA4A4] hover:text-[#4D9090] font-semibold transition-colors text-sm sm:text-base"
@@ -75,7 +75,7 @@ export default function Branding() {
       </div>
 
       {/* Gallery Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-20">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 pb-12 sm:pb-20">
         <div className="columns-1 md:columns-2 lg:columns-3 gap-0 sm:gap-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -88,8 +88,7 @@ export default function Branding() {
               alt="Gallery 3"
               className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-[#0A374C]/40"></div>
-          </motion.div>
+                      </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -103,8 +102,7 @@ export default function Branding() {
               alt="Gallery 2"
               className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-[#0A374C]/40"></div>
-          </motion.div>
+                      </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -118,8 +116,7 @@ export default function Branding() {
               alt="Gallery 4"
               className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-[#0A374C]/40"></div>
-          </motion.div>
+                      </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -133,8 +130,7 @@ export default function Branding() {
               alt="Gallery 1"
               className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-[#0A374C]/40"></div>
-          </motion.div>
+                      </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -148,13 +144,12 @@ export default function Branding() {
               alt="Gallery 5"
               className="w-full h-[500px] object-cover object-bottom group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-[#0A374C]/40"></div>
-          </motion.div>
+                      </motion.div>
         </div>
       </div>
 
       {/* Explore Our Work Button */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 pb-12 sm:pb-16">
         <div className="flex justify-center">
           <Button
             onClick={() => navigate("/our-work")}
@@ -167,7 +162,7 @@ export default function Branding() {
 
       {/* More Services Section */}
       <div className="bg-[#F7F5F2] py-12 sm:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-8 md:px-16">
           <div className="text-center mb-8 sm:mb-12 relative pl-4 sm:pl-6 md:pl-8">
             <motion.h2
               initial={{ opacity: 0, y: 16 }}

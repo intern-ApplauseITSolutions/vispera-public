@@ -22,25 +22,34 @@ export default function Services() {
 
   return (
     <section id="services" className="py-2 md:py-4" style={{ backgroundColor: "#F7F5F2" }}>
-      <div className="max-w-[1440px] mx-auto px-8 md:px-8 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10">
 
         <div className="flex flex-col items-center mb-10 relative">
           <p
-            className="text-[#5EA4A4] font-semibold uppercase text-center align-middle text-[16px] leading-[42px] tracking-normal mb-2"
+            className="text-[#5EA4A4] font-semibold uppercase text-center align-middle text-[16px] leading-[42px] tracking-normal"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
             OUR SERVICES
           </p>
-          <div className="relative">
-            <motion.h2
+          <div className="relative inline-block mt-[-8px]">
+            <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-[32px] md:text-[32px] font-bold text-[#0A374C] font-heading relative z-10"
+              className="text-[#0A374C] relative z-10 text-center"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 600,
+                fontSize: "32px",
+                lineHeight: "42px",
+                letterSpacing: "0.02em",
+                textAlign: "center",
+                verticalAlign: "middle"
+              }}
             >
               How We Help
-            </motion.h2>
-            <div className="absolute -top-2 -right-6 w-12 h-12 opacity-80 z-0">
+            </motion.div>
+            <div className="absolute top-0 -right-5 w-7 h-7 opacity-80 z-0 pointer-events-none">
               <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
@@ -80,11 +89,11 @@ function ServiceCard({ service, delay = 0, navigate }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay }}
-      className="bg-white rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-3 sm:gap-4 hover:shadow-md transition-shadow duration-300 cursor-pointer"
+      className="bg-white rounded-2xl p-2 sm:p-3 flex flex-col items-center gap-1 sm:gap-2 hover:shadow-md transition-shadow duration-300 cursor-pointer max-w-[250px] w-full mx-auto"
       style={{ border: "1px solid #e8e4dc" }}
       onClick={handleClick}
     >
-      <div className="w-full h-32 sm:h-40 flex items-center justify-center">
+      <div className="w-full h-20 sm:h-28 flex items-center justify-center">
         <img
           src={service.img}
           alt={service.title}
