@@ -4,6 +4,7 @@ import { SectionHeading } from '../common';
 import testimonial1 from "../../assets/images/testimonial1.png";
 import testimonial2 from "../../assets/images/testimonial2.png";
 import headingBg from "../../assets/images/decoration-heading-bg.svg";
+import sectionBg from "../../assets/images/our-client-bg.png";
 
 const testimonialsData = [
   {
@@ -45,15 +46,53 @@ export default function Testimonials({
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section id="testimonials" className={clsx('pb-8 md:pb-10 lg:pb-28 pt-6 md:pt-8 lg:pt-0 overflow-hidden', className)} style={{ backgroundColor: '#F3F0EF' }}>
+    <section
+      id="testimonials"
+      className={clsx('pb-4 md:pb-6 lg:pb-16 pt-8 md:pt-12 lg:pt-16 overflow-hidden', className)}
+      style={{
+        backgroundColor: '#F3F0EF',
+        backgroundImage: `url(${sectionBg})`,
+        backgroundSize: '80% auto',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       <div className="w-full">
         {/* Section Heading - Mobile */}
         <div className="lg:hidden mb-6 md:mb-8 px-6">
-          <SectionHeading
-            subtitle="TESTIMONIALS"
-            title="What Our Clients Say"
-            align="center"
-          />
+          <div className="flex flex-col items-center relative">
+            <p
+              className="text-[#5EA4A4] w-full text-center text-sm md:text-base"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 600,
+                lineHeight: "42px",
+                textAlign: "center",
+                verticalAlign: "middle",
+                textTransform: "uppercase"
+              }}
+            >
+              TESTIMONIALS
+            </p>
+            <div className="relative inline-block mt-[-8px]">
+              <h2
+                className="text-[#0A374C] relative z-10 text-center text-2xl md:text-[28px]"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: 600,
+                  lineHeight: "42px",
+                  letterSpacing: "0.02em",
+                  textAlign: "center",
+                  verticalAlign: "middle"
+                }}
+              >
+                What Our Clients Say
+              </h2>
+              <div className="absolute top-0 -right-5 w-7 h-7 opacity-80 z-0 pointer-events-none">
+                <img src={headingBg} alt="" className="w-full h-full object-contain" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-stretch">
@@ -128,7 +167,7 @@ export default function Testimonials({
               <div className="flex-1 pl-4 md:pl-16 lg:pl-32 pr-6 md:pr-8 lg:pr-12">
                 <p
                   className="text-primary text-sm leading-5 mb-10 font-medium text-justify tracking-[0.02em] max-w-[520px] whitespace-pre-line"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  style={{ fontFamily: "'Inter', sans-serif", wordSpacing: '-0.15em' }}
                 >
                   {currentTestimonial.quote}
                 </p>

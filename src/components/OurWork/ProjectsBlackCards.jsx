@@ -173,7 +173,7 @@ export default function ProjectsBlackCards({ searchQuery = "", sortBy = "Latest"
                       </div>
                     )}
                     <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />
-                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-6 py-2 bg-white/25 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold uppercase tracking-[0.2em] transition-all duration-500 ease-in-out group-hover:top-0 z-20 rounded-b-lg shadow-sm">
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-4 md:px-6 py-2 bg-white/25 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold uppercase tracking-[0.14em] transition-all duration-500 ease-in-out group-hover:top-0 z-20 rounded-b-lg shadow-sm whitespace-nowrap">
                       {project.badge || "Project"}
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 bg-[#0A374C]/80 backdrop-blur-[2px] p-3 z-10 transition-opacity duration-500 group-hover:opacity-0">
@@ -224,7 +224,7 @@ export default function ProjectsBlackCards({ searchQuery = "", sortBy = "Latest"
                   <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />
 
                   {/* Top Centered Tag (Slides Down) - Frosted Glass Effect */}
-                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-6 py-2 bg-white/25 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold uppercase tracking-[0.2em] transition-all duration-500 ease-in-out group-hover:top-0 z-20 rounded-b-lg shadow-sm">
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-4 md:px-6 py-2 bg-white/25 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold uppercase tracking-[0.14em] transition-all duration-500 ease-in-out group-hover:top-0 z-20 rounded-b-lg shadow-sm whitespace-nowrap">
                     {project.badge || "Project"}
                   </div>
 

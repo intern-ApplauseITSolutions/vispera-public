@@ -116,6 +116,7 @@ export default function Clients({ hideViewAllButton = false }) {
               <img src={headingBg} alt="" className="w-full h-full object-contain" />
             </div>
           </div>
+
         </div>
 
         {/* ============================================================
@@ -291,7 +292,7 @@ export default function Clients({ hideViewAllButton = false }) {
         </div>
 
         {!hideViewAllButton && (
-          <div className="flex justify-center mt-12 pb-4">
+          <div className="flex justify-center mt-8 pb-4">
             <ViewAllButton 
               onClick={() => navigate("/clients")}
             />

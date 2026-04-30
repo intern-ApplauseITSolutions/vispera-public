@@ -117,6 +117,8 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeGalleryIdx, setActiveGalleryIdx] = useState(null);
   const [galleryStartIdx, setGalleryStartIdx] = useState(0);
+  const opensDirectVideo = (project) => project.id === 4;
+  const isFirstProjectModal = selectedProject?.id === 1;
 
   const filtered = activeCategory === "All"
     ? projects
@@ -216,7 +218,7 @@ export default function Projects() {
                       key={project.id}
                       layout
                       onClick={() => {
-                        if (project.isExternal) {
+                        if (project.isExternal || opensDirectVideo(project)) {
                           window.open(project.link, "_blank", "noopener,noreferrer");
                         } else {
                           setSelectedProject(project);
@@ -241,7 +243,7 @@ export default function Projects() {
                       <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />
 
                       {/* Top Centered Tag (Slides Down) - Frosted Glass Effect */}
-                      <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-6 py-2 bg-white/25 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold uppercase tracking-[0.2em] transition-all duration-500 ease-in-out group-hover:top-0 z-20 rounded-b-lg shadow-sm">
+                      <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-4 md:px-6 py-2 bg-white/25 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold uppercase tracking-[0.14em] transition-all duration-500 ease-in-out group-hover:top-0 z-20 rounded-b-lg shadow-sm whitespace-nowrap">
                         {project.badge || project.category}
                       </div>
 
@@ -254,18 +256,18 @@ export default function Projects() {
                           borderBottomRightRadius: "12px"
                         }}
                       >
-                        <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight w-full text-center whitespace-nowrap overflow-hidden text-ellipsis">
+                        <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight w-full text-center whitespace-nowrap overflow-hidden text-ellipsis font-sans">
                           {project.title}
                         </h3>
                       </div>
 
                       {/* Hover Content Overlay (Centers Title & Button) */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 pointer-events-none group-hover:pointer-events-auto">
-                        <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100 max-w-full break-words">
+                        <h3 className="text-white text-[13px] md:text-[15px] font-bold text-center leading-snug drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100 max-w-full break-words font-sans">
                           {project.title}
                         </h3>
-                        <button className="absolute bottom-5 bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150 border border-transparent hover:border-white">
-                          {project.isExternal ? "Visit Website" : ([4].includes(project.id) ? "Watch Video" : "View")}
+                        <button className="absolute bottom-5 bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-150 border border-transparent hover:border-white cursor-pointer">
+                          {project.isExternal ? "Visit Website" : (opensDirectVideo(project) ? "Watch Video" : "View")}
                         </button>
                       </div>
                     </motion.div>
@@ -316,9 +318,9 @@ export default function Projects() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="relative w-[95%] max-w-2xl lg:max-w-5xl bg-[#0A374C] rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 flex flex-col items-stretch z-10 border border-dashed border-white/40 max-h-[92vh] overflow-y-auto scrollbar-hide"
+              className={`relative w-[95%] bg-[#0A374C] rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 flex flex-col items-stretch z-10 border border-dashed border-white/40 ${isFirstProjectModal ? "max-w-5xl lg:max-w-[128rem] max-h-[82vh]" : "max-w-2xl lg:max-w-5xl max-h-[92vh]"}`}
             >
-              <div className="flex flex-col lg:grid lg:grid-cols-[5.5fr_6.5fr] gap-4 lg:gap-6 items-stretch">
+              <div className={`flex flex-col lg:grid gap-4 lg:gap-6 items-stretch ${isFirstProjectModal ? "lg:grid-cols-[6.5fr_5.5fr]" : "lg:grid-cols-[6fr_6fr]"}`}>
                 {/* Top/Left: Image Section */}
                 <div className="relative w-full h-full">
                   <div className="absolute -top-[2px] left-1/2 -translate-x-1/2 z-20">
@@ -327,7 +329,7 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full h-full shadow-2xl bg-black/20 flex flex-col justify-center relative group cursor-pointer"
+                  <div className={`rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full shadow-2xl bg-black/20 flex flex-col justify-center relative group cursor-pointer ${isFirstProjectModal ? "h-auto" : "h-full"}`}
                     onClick={() => {
                       if (selectedProject.link && !selectedProject.gallery) {
                         window.open(selectedProject.link, '_blank', 'noopener,noreferrer');
@@ -337,7 +339,7 @@ export default function Projects() {
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
-                      className="w-full h-full object-cover"
+                      className={`w-full ${isFirstProjectModal ? "aspect-[16/9] min-h-[280px] lg:min-h-[320px] h-auto object-cover" : "h-full object-cover"}`}
                     />
                     {/* Play Button Overlay */}
                     {[1, 2, 3, 4, 5, 7].includes(selectedProject.id) && (
@@ -354,7 +356,7 @@ export default function Projects() {
 
                 {/* Bottom/Right: Content Section */}
                 <div className="flex flex-col py-2">
-                  <h3 className="text-xl md:text-lg lg:text-xl font-bold text-white font-heading leading-snug mb-3 lg:mb-4">
+                  <h3 className="text-xl md:text-lg lg:text-xl font-bold text-white leading-snug mb-3 lg:mb-4 font-sans">
                     {selectedProject.title}
                   </h3>
 

@@ -108,12 +108,12 @@ export default function FeaturedImpact() {
               transition={{ duration: 0.5 }}
               className="w-full h-full relative z-10"
             >
-              <div className="w-full mx-auto px-12 md:px-16 lg:px-24 py-4 md:py-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+              <div className="w-full mx-auto px-6 md:px-10 lg:px-14 xl:px-24 py-4 md:py-6 grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-6 xl:gap-14 items-stretch">
 
                 {/* Image Area - Card Style */}
-                <div className="lg:col-span-6 relative">
+                <div className="xl:col-span-6 relative lg:max-w-[760px] lg:mx-auto xl:max-w-none">
                   {/* Badge */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-36 md:w-44 lg:w-48 pointer-events-none">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-36 md:w-44 xl:w-48 pointer-events-none">
                     <img src={tagImg} alt="" className="w-full h-auto" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-white text-[8px] md:text-[10px] font-bold tracking-[0.2em] pb-1.5 md:pb-2">
@@ -122,7 +122,7 @@ export default function FeaturedImpact() {
                     </div>
                   </div>
 
-                  <div className="relative rounded-[2rem] overflow-hidden border-[6px] border-[#5EA4A4] shadow-2xl aspect-[3/2] md:aspect-video lg:aspect-[3/2] h-auto flex items-center justify-center group">
+                  <div className="relative rounded-[2rem] overflow-hidden border-[6px] border-[#5EA4A4] shadow-2xl aspect-[3/2] md:aspect-video xl:aspect-[3/2] h-auto flex items-center justify-center group">
                     <img
                       src={story.image}
                       alt={story.title}
@@ -145,14 +145,14 @@ export default function FeaturedImpact() {
                 </div>
 
                 {/* Text Content - Aligned to match image height */}
-                <div className="lg:col-span-6 text-white flex flex-col justify-between py-1">
+                <div className="xl:col-span-6 text-white flex flex-col justify-between py-1 lg:max-w-[760px] lg:mx-auto xl:max-w-none">
                   <div className="space-y-3">
-                    <h3 className="text-base md:text-lg lg:text-xl font-bold leading-none font-heading whitespace-nowrap overflow-hidden text-ellipsis">{story.title}</h3>
+                    <h3 className="text-base md:text-lg xl:text-xl font-bold leading-snug font-heading">{story.title}</h3>
 
                     <div className="space-y-2">
                       <p className="flex items-start gap-2">
                         <span className="font-bold whitespace-nowrap text-white text-xs md:text-sm tracking-wide">• Client :</span>
-                        <span className="text-white/90 text-xs md:text-sm leading-relaxed">{story.client}</span>
+                        <span className="text-white/90 text-[12px] leading-[1.6] font-normal">{story.client}</span>
                       </p>
                       <p className="flex items-start gap-2">
                         <span className="font-bold whitespace-nowrap text-white text-xs md:text-sm tracking-wide">• Location:</span>
@@ -160,21 +160,21 @@ export default function FeaturedImpact() {
                       </p>
                       <div className="pt-1">
                         <p 
-                          className="text-white/90 text-xs leading-[1.6] font-semibold"
+                          className="text-white/90 text-[12px] leading-[1.6] font-normal"
                           style={{
                             fontFamily: "'Inter', sans-serif",
                             textAlign: "justify",
                             textTransform: "capitalize",
                           }}
                         >
-                          <span className="font-bold text-white mr-2">• Project Overview:</span>
+                          <span className="font-bold text-white mr-2 shadow-sm font-sans tracking-wide">• Project Overview:</span>
                           {story.overview}
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-4 flex justify-center lg:justify-start pb-16 md:pb-0">
+                  <div className="mt-4 flex justify-center xl:justify-start pb-16 md:pb-0">
                     <WatchVideoButton 
                       onClick={() => window.open(story.link, "_blank", "noopener,noreferrer")}
                     />

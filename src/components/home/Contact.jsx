@@ -6,9 +6,7 @@ import headingBg from "../../assets/images/decoration-heading-bg.svg";
 export default function Contact() {
   return (
     <section id="contact" className="py-8 md:py-12 lg:pt-20 xl:pt-12 relative overflow-hidden" style={{ 
-      backgroundImage: `url(${sectionBg})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
+      backgroundColor: '#F3F0EF'
     }}>
       {/* Subtle Texture Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -40,7 +38,7 @@ export default function Contact() {
 
             {/* Info card (Quick Contact) */}
             <div
-              className="rounded-[2rem] p-4 sm:p-6 space-y-2 lg:space-y-1.5 xl:space-y-2 border-2 border-[#5EA4A4] shadow-sm flex flex-col justify-between w-full md:w-[340px] lg:w-[310px] xl:w-[360px]"
+              className="rounded-[1rem] p-4 sm:p-6 space-y-2 lg:space-y-1.5 xl:space-y-2 border-2 border-[#5EA4A4] shadow-sm flex flex-col justify-between w-full md:w-[340px] lg:w-[310px] xl:w-[360px]"
               style={{ 
                 backgroundColor: "rgba(255, 255, 255, 0.8)",
                 height: "330px"
@@ -57,7 +55,7 @@ export default function Contact() {
                   </div>
                   <div className="overflow-hidden">
                     <p className="text-[#5EA4A4] text-[12px] font-bold uppercase tracking-widest leading-tight">Main Office</p>
-                    <p className="text-[#0A374C] text-[14px] break-words leading-tight mt-0.5">+91 9767346346</p>
+                    <a href="tel:+919767346346" className="text-[#0A374C] text-[14px] break-words leading-tight mt-0.5 hover:text-[#5EA4A4] transition-colors">+91 9767346346</a>
                   </div>
                 </div>
               </div>
@@ -73,7 +71,7 @@ export default function Contact() {
                   </div>
                   <div className="overflow-hidden">
                     <p className="text-[#5EA4A4] text-[12px] font-bold uppercase tracking-widest leading-tight">Mail to</p>
-                    <p className="text-[#0A374C] text-[14px] break-all leading-tight mt-0.5">contact@visperastudios.in</p>
+                    <a href="mailto:contact@visperastudios.in" className="text-[#0A374C] text-[14px] break-all leading-tight mt-0.5 hover:text-[#5EA4A4] transition-colors">contact@visperastudios.in</a>
                   </div>
                 </div>
               </div>
@@ -106,7 +104,7 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col items-center md:col-span-1 lg:col-span-1 order-1 md:order-2"
           >
-            <div className="relative rounded-[2rem] overflow-hidden w-full max-w-[305px] md:max-w-[345px] lg:max-w-[385px] xl:max-w-[405px] h-[380px] sm:h-[430px] md:h-[470px] lg:h-[500px] xl:h-[520px]">
+            <div className="relative rounded-[1rem] overflow-hidden w-full max-w-[305px] md:max-w-[345px] lg:max-w-[385px] xl:max-w-[405px] h-[420px] sm:h-[480px] md:h-[520px] lg:h-[550px] xl:h-[570px]">
               <img
                 src={contactImg}
                 alt="Contact Vispera Studios"
@@ -137,7 +135,7 @@ export default function Contact() {
 
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="rounded-[2rem] overflow-hidden border-2 border-[#5EA4A4] shadow-sm flex flex-col w-full md:max-w-full lg:w-[360px] xl:w-[380px]"
+              className="rounded-[1rem] overflow-hidden border-2 border-[#5EA4A4] shadow-sm flex flex-col w-full md:max-w-full lg:w-[360px] xl:w-[380px]"
               style={{ 
                 backgroundColor: "rgba(255, 255, 255, 0.8)",
                 height: "330px"

@@ -26,7 +26,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <footer className="relative overflow-hidden font-inter" style={{ fontFamily: "'Inter', sans-serif" }}>
+      <style jsx>{`
+        footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+          font-family: 'Inter', sans-serif !important;
+        }
+      `}</style>
 
       {/* Wave shape SVG — sits on top of the section below */}
       <div style={{ backgroundColor: "#F7F5F2", lineHeight: 0 }}>
@@ -74,7 +79,7 @@ export default function Footer() {
 
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 sm:pt-20 md:pt-28 lg:pt-40 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 sm:pt-20 md:pt-28 lg:pt-48 xl:pt-48 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
           {/* Col 1 — Brand */}
@@ -103,8 +108,8 @@ export default function Footer() {
           </div>
 
           {/* Col 2 — Quick Links */}
-          <div className="space-y-5 lg:pt-2 sm:flex sm:flex-col sm:items-center lg:items-start">
-            <h3 className="text-sm font-bold text-white uppercase tracking-widest" style={{ fontFamily: "'Inter', sans-serif" }}>Quick Links</h3>
+          <div className="space-y-5 lg:pt-2 sm:flex sm:flex-col sm:items-center lg:items-start xl:ml-8">
+            <h3 className="text-sm font-bold text-white uppercase tracking-widest">Quick Links</h3>
             <ul className="space-y-2.5 sm:text-center lg:text-left">
               {quickLinks.map((link) => (
                 <li key={link.href} className="flex items-center gap-2 sm:justify-center lg:justify-start">
@@ -112,7 +117,6 @@ export default function Footer() {
                   <Link
                     to={link.href}
                     className="text-white hover:text-white/80 transition-colors duration-300 text-sm"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {link.label}
                   </Link>
@@ -123,14 +127,13 @@ export default function Footer() {
 
           {/* Col 3 — Contact Info */}
           <div className="space-y-5 lg:pt-2">
-            <h3 className="text-sm font-bold text-white uppercase tracking-widest" style={{ fontFamily: "'Inter', sans-serif" }}>Contact Info</h3>
+            <h3 className="text-sm font-bold text-white uppercase tracking-widest">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-white shrink-0 mt-0.5" />
                 <a
                   href={`mailto:${contactInfo.email}`}
                   className="text-white hover:text-white/80 transition-colors text-sm"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {contactInfo.email}
                 </a>
@@ -140,14 +143,13 @@ export default function Footer() {
                 <a
                   href={`tel:${contactInfo.phone}`}
                   className="text-white hover:text-white/80 transition-colors text-sm"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {contactInfo.phone}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                <address className="text-white text-sm not-italic leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
+                <address className="text-white text-sm not-italic leading-relaxed">
                   {contactInfo.address}
                 </address>
               </li>
@@ -156,8 +158,8 @@ export default function Footer() {
 
           {/* Col 4 — CTA + QR */}
           <div className="space-y-4 lg:pt-2 flex flex-col items-start sm:items-center lg:items-center justify-start sm:justify-center lg:justify-center">
-            <h3 className="text-base font-bold text-white" style={{ fontFamily: "'Inter', sans-serif" }}>Have a story to tell?</h3>
-            <p className="text-white text-sm leading-relaxed text-left sm:text-center lg:text-center" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <h3 className="text-base font-bold text-white">Have a story to tell?</h3>
+            <p className="text-white text-sm leading-relaxed text-left sm:text-center lg:text-center">
               Let's create something meaningful together.
             </p>
             <StartProjectButton 
@@ -171,7 +173,7 @@ export default function Footer() {
                 alt="QR Code"
                 className="w-20 h-20 object-cover rounded-lg shrink-0"
               />
-              <p className="text-white text-xs leading-relaxed sm:text-center lg:text-center text-left" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <p className="text-white text-xs leading-relaxed sm:text-center lg:text-center text-left">
                 Scan to save our<br />contact details
               </p>
             </div>

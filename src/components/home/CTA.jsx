@@ -29,14 +29,14 @@ export default function CTA() {
       </div>
 
       <div className="w-full relative z-10 px-6 md:px-12 lg:px-20 max-w-[1440px] mx-auto">
-        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-3 md:gap-2 lg:ml-12 xl:ml-20">
+        <div className="flex flex-col items-center md:items-start text-center gap-3 md:gap-2 lg:ml-12 xl:ml-20">
           
           {/* Text Content Area */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 space-y-4 lg:space-y-6 flex flex-col items-center md:items-start"
+            className="flex-1 space-y-4 lg:space-y-6 flex flex-col items-center text-center"
           >
             <div className="relative inline-block mt-8 md:mt-2">
               {/* Camera Illustration Area */}
@@ -63,7 +63,7 @@ export default function CTA() {
               we'd love to hear from you.
             </p>
 
-            <div className="pt-2 md:pt-4 w-full flex justify-center md:justify-start">
+            <div className="pt-2 md:pt-4 w-full flex justify-center">
               <StartProjectButton />
             </div>
           </motion.div>

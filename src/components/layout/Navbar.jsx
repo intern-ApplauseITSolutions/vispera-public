@@ -48,7 +48,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`font-medium transition-colors duration-200 text-[15px] ${
+                className={`font-semibold transition-colors duration-200 text-[15px] ${
                   location.pathname === link.href
                     ? "text-[#5EA4A4]"
                     : "text-[#0A374C] hover:text-[#5EA4A4]"

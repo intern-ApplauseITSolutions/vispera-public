@@ -30,8 +30,8 @@ export default function Manifesto() {
           <div className="w-[55%] md:w-auto md:flex-1 lg:flex-none lg:w-[60%] text-center md:px-8 z-20 relative shrink-0">
             <h2 className="text-[#0A374C] 
               font-bold 
-              text-[11px] sm:text-[200px] md:text-sm lg:text-[20px] 
-              leading-[18px] sm:leading-[24px] md:leading-[1.6]
+              text-[12px] sm:text-[200px] md:text-base lg:text-[22px] 
+              leading-[19px] sm:leading-[24px] md:leading-[1.6]
               tracking-[0.01em] md:tracking-wide 
               uppercase
               font-heading
