@@ -15,7 +15,7 @@ export default function StartProjectButton({ className, variant = "primary", sty
   return (
     <button
       className={clsx(
-        "font-bold rounded-lg shadow-lg uppercase tracking-widest transition-all transform active:scale-95",
+        "font-bold rounded-lg shadow-lg uppercase tracking-widest transition-all transform active:scale-95 cursor-pointer",
         isDark ? "bg-[#0A374C] hover:bg-[#5EA4A4]" : "bg-[#5EA4A4] hover:bg-[#0A374C]",
         "text-white",
         // Only apply default size if no custom className with size is provided

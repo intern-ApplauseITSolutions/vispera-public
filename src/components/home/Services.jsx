@@ -18,13 +18,14 @@ const services = [
   { id: 6, title: "DIGITAL MARKETING AND CONTENT STRATEGY", img: s6, route: "/services/digital-marketing" },
 ];
 
-export default function Services() {
+export default function Services({ hideSubheading = false }) {
   const navigate = useNavigate();
   return (
     <section id="services" className="py-2 md:py-4" style={{ backgroundColor: "#F7F5F2" }}>
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12">
 
         <div className="flex flex-col items-center mb-10 relative">
+          {!hideSubheading && (
           <p
             className="text-[#5EA4A4] w-full text-center"
             style={{ 
@@ -39,6 +40,7 @@ export default function Services() {
           >
             OUR SERVICES
           </p>
+          )}
           <div className="relative inline-block mt-[-8px]">
             <motion.h2
               initial={{ opacity: 0, y: 16 }}

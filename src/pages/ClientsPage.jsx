@@ -8,7 +8,7 @@ export default function ClientsPage() {
       <div className="mt-16 md:mt-20 lg:mt-22">
         <HeaderBanner title="Clients" />
       </div>
-      <Clients hideViewAllButton={true} />
+      <Clients hideViewAllButton={true} hideSubheading={true} />
     </Layout>
   );
 }

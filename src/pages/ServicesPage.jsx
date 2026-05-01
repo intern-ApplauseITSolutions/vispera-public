@@ -8,7 +8,7 @@ export default function ServicesPage() {
       <div className="mt-16 md:mt-20 lg:mt-22">
         <HeaderBanner title="Our Services" />
       </div>
-      <Services />
+      <Services hideSubheading={true} />
     </Layout>
   );
 }

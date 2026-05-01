@@ -48,7 +48,7 @@ export default function Testimonials({
   return (
     <section
       id="testimonials"
-      className={clsx('pb-4 md:pb-6 lg:pb-16 pt-8 md:pt-12 lg:pt-16 overflow-hidden', className)}
+      className={clsx('pb-16 md:pb-14 lg:pb-24 pt-8 md:pt-12 lg:pt-16 overflow-hidden', className)}
       style={{
         backgroundColor: '#F3F0EF',
         backgroundImage: `url(${sectionBg})`,

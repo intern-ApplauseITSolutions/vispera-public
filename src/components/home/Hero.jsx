@@ -1,4 +1,4 @@
-import heroVideo from "../../assets/images/Hero/Hero.mp4";
+import heroVideo from "../../assets/video/hero1.mp4";
 
 export default function Hero() {
   return (
@@ -15,7 +15,7 @@ export default function Hero() {
               loop
               muted
               playsInline
-              className="w-full h-auto max-h-[470px] md:max-h-[400px] lg:max-h-[380px] object-cover"
+              className="w-full h-auto max-h-[700px] md:max-h-[400px] lg:max-h-[380px] object-cover"
             />
           </div>
 

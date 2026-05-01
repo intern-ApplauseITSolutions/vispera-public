@@ -79,7 +79,7 @@ export default function Footer() {
 
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-28 sm:pt-32 md:pt-40 lg:pt-56 xl:pt-56 pb-2">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 sm:pt-12 md:pt-40 lg:pt-56 xl:pt-56 pb-2">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
           {/* Col 1 — Brand */}
@@ -110,9 +110,9 @@ export default function Footer() {
           {/* Col 2 — Quick Links */}
           <div className="space-y-5 lg:pt-2 sm:flex sm:flex-col sm:items-center lg:items-start xl:ml-8">
             <h3 className="text-sm font-bold text-white tracking-widest">Quick Links</h3>
-            <ul className="space-y-2.5 sm:text-center lg:text-left">
+            <ul className="space-y-2.5 sm:text-left lg:text-left">
               {quickLinks.map((link) => (
-                <li key={link.href} className="flex items-center gap-2 sm:justify-center lg:justify-start">
+                <li key={link.href} className="flex items-center gap-2 sm:justify-start lg:justify-start">
                   <span className="text-white text-xs">•</span>
                   <Link
                     to={link.href}

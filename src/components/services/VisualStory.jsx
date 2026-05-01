@@ -99,7 +99,7 @@ export default function VisualStory() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img1}
@@ -113,7 +113,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img2}
@@ -127,7 +127,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img3}
@@ -141,7 +141,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img4}
@@ -155,7 +155,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img5}
@@ -169,7 +169,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img6}
@@ -183,7 +183,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img7}
@@ -197,7 +197,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.7 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img8}
@@ -211,7 +211,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img9}
@@ -225,7 +225,7 @@ export default function VisualStory() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.9 }}
-            className="relative group overflow-hidden rounded-lg break-inside-avoid mb-0 sm:mb-4"
+            className="relative group overflow-hidden rounded-none sm:rounded-lg break-inside-avoid mb-2 sm:mb-4"
           >
             <img
               src={img10}
@@ -256,7 +256,7 @@ export default function VisualStory() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A374C] mb-4 relative z-10"
+              className="text-xl sm:text-2xl md:text-[32px] font-bold text-[#0A374C] mb-4 relative z-10"
             >
               More Services to Explore
             </motion.h2>
@@ -265,7 +265,7 @@ export default function VisualStory() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 sm:justify-center">
             {remainingServices.map((service, index) => (
               <motion.div
                 key={service.id}

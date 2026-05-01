@@ -58,19 +58,39 @@ const bottomRow = [
   { name: "NCPEDP", logo: ncpedpLogo },
 ];
 
-const LogoItem = ({ client, h = "h-12 md:h-14" }) => (
-  <div className="flex flex-col items-center justify-center p-0">
-    <img
-      src={client.logo}
-      alt={client.name}
-      className={`${h} w-auto object-contain transition-transform hover:scale-105 duration-300`}
-    />
-  </div>
-);
+const LogoItem = ({ client, h = "h-12 md:h-14" }) => {
+  const largeLogos = [
+    "Atal Bhujal Yojana",
+    "TATA Trusts", 
+    "Ministry of Agriculture",
+    "Government of Maharashtra",
+    "Krushak Mitra",
+    "Lokatmik Foundation",
+    "National Horticulture Board",
+    "Concern India Foundation",
+    "NCPEDP",
+    "Yuva Mitra",
+    "Mana Mahila Foundation",
+    "Safety Research Foundation"
+  ];
+  
+  const isLarge = largeLogos.includes(client.name);
+  const heightClass = isLarge ? "h-16 md:h-20" : `h-12 md:${h.split(' ')[1]}`;
+  
+  return (
+    <div className="flex flex-col items-center justify-center p-0">
+      <img
+        src={client.logo}
+        alt={client.name}
+        className={`${heightClass} w-auto object-contain transition-transform hover:scale-105 duration-300`}
+      />
+    </div>
+  );
+};
 
 import sectionBg from "../../assets/images/our-client-bg.png";
 
-export default function Clients({ hideViewAllButton = false }) {
+export default function Clients({ hideViewAllButton = false, hideHeading = false, hideSubheading = false }) {
   const navigate = useNavigate();
   return (
     <section id="clients" className="pt-2 pb-4 md:pt-4 md:pb-8 overflow-hidden relative" style={{ 
@@ -84,7 +104,8 @@ export default function Clients({ hideViewAllButton = false }) {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14">
 
         {/* Header */}
-        <div className="flex flex-col items-center mb-8 md:mb-10 lg:mb-12 relative">
+        <div className="flex flex-col items-center mt-4 mb-8 md:mt-6 md:mb-10 lg:mt-8 lg:mb-12 relative">
+          {!hideSubheading && (
           <p 
             className="text-[#5EA4A4] w-full text-center text-sm md:text-base"
             style={{
@@ -98,6 +119,7 @@ export default function Clients({ hideViewAllButton = false }) {
           >
             OUR CLIENTS
           </p>
+          )}
           <div className="relative inline-block mt-[-8px]">
             <h2 
               className="text-[#0A374C] relative z-10 text-center text-2xl md:text-[28px] lg:text-[32px]"
@@ -148,16 +170,16 @@ export default function Clients({ hideViewAllButton = false }) {
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="col-span-6 bg-[#5EA4A480] border-2 border-[#0A374C] rounded-3xl px-8 py-5 md:px-10 md:py-6 text-center relative shadow-sm scale-100"
+              className="col-span-6 bg-[#5EA4A480] border-2 border-[#0A374C] rounded-3xl px-8 py-5 md:px-10 md:py-6 text-center relative shadow-sm scale-100 transform -translate-x-4 -translate-y-2"
             >
-              <p className="text-[#0A374C] text-sm md:text-base font-medium leading-[1.5]">
+              <p className="text-[#0A374C] text-sm md:text-base font-medium leading-[1.5] italic">
                 “ Behind every story is a partnership that <br />
                 matters. We've had the privilege of working with <br />
                 organizations that are shaping change, capturing <br />
                 their journeys through visuals that inform, <br />
                 inspire, and connect. ”
               </p>
-              <div className="absolute bottom-2 right-4 md:bottom-3 md:right-3 lg:bottom-4 lg:right-4 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 opacity-80">
+              <div className="absolute bottom-2 right-2 w-12 h-12 max-sm:w-12 max-sm:h-12 sm:w-24 sm:h-24 max-md:w-24 max-md:h-24 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-20 xl:h-20 opacity-80 pointer-events-none">
                 <img src={cardDecorationBg} alt="" className="w-full h-full object-contain" />
               </div>
             </motion.div>
@@ -215,8 +237,8 @@ export default function Clients({ hideViewAllButton = false }) {
               <p className="text-[#0A374C] text-[13px] font-medium leading-[1.6] italic">
                 “ Behind every story is a partnership that matters. We've had the privilege of working with organizations that are shaping change, capturing their journeys through visuals that inform, inspire, and connect. ”
               </p>
-              <div className="absolute bottom-2 right-4 w-8 h-8 sm:w-10 sm:h-10 opacity-10">
-                <img src={cardDecorationBg} alt="" className="w-full h-full object-contain grayscale brightness-0" />
+              <div className="absolute bottom-2 right-2 w-8 h-8 sm:w-10 sm:h-10 opacity-80 pointer-events-none">
+                <img src={cardDecorationBg} alt="" className="w-full h-full object-contain" />
               </div>
             </motion.div>
 
@@ -252,27 +274,27 @@ export default function Clients({ hideViewAllButton = false }) {
           {/* Top Grid: 3 rows, 3 cols */}
           <div className="grid grid-cols-3 gap-y-7 gap-x-3 items-center place-items-center">
             {/* Row 1 */}
-            <LogoItem client={{ name: "CFTI", logo: cftiLogo }} h="h-8" />
-            <LogoItem client={{ name: "Safety Research Foundation", logo: safetyResearchLogo }} h="h-9" />
-            <LogoItem client={{ name: "GIZ", logo: gizLogo }} h="h-7" />
+            <LogoItem client={{ name: "CFTI", logo: cftiLogo }} h="h-12" />
+            <LogoItem client={{ name: "Safety Research Foundation", logo: safetyResearchLogo }} h="h-12" />
+            <LogoItem client={{ name: "GIZ", logo: gizLogo }} h="h-12" />
 
             {/* Row 2 */}
-            <LogoItem client={{ name: "Yuva Mitra", logo: yuvaMitraLogo }} h="h-9" />
-            <LogoItem client={{ name: "TATA Trusts", logo: tataTrustsLogo }} h="h-8" />
-            <LogoItem client={{ name: "Ministry of Agriculture", logo: modLogo }} h="h-9" />
+            <LogoItem client={{ name: "Yuva Mitra", logo: yuvaMitraLogo }} h="h-12" />
+            <LogoItem client={{ name: "TATA Trusts", logo: tataTrustsLogo }} h="h-12" />
+            <LogoItem client={{ name: "Ministry of Agriculture", logo: modLogo }} h="h-12" />
 
             {/* Row 3 */}
-            <LogoItem client={{ name: "German Cooperation", logo: germanLogo }} h="h-8" />
-            <LogoItem client={{ name: "Lokatmik Foundation", logo: lokatmikLogo }} h="h-14" />
-            <LogoItem client={{ name: "Atal Bhujal Yojana", logo: atalBhujalLogo }} h="h-9" />
+            <LogoItem client={{ name: "German Cooperation", logo: germanLogo }} h="h-12" />
+            <LogoItem client={{ name: "Lokatmik Foundation", logo: lokatmikLogo }} h="h-12" />
+            <LogoItem client={{ name: "Atal Bhujal Yojana", logo: atalBhujalLogo }} h="h-12" />
           </div>
 
           {/* Central Quote Card */}
           <motion.div className="bg-[#5EA4A4]/30 border-2 border-[#0A374C] rounded-2xl px-6 py-8 text-center relative shadow-sm my-2">
-            <p className="text-[#0A374C] text-[11px] font-bold leading-relaxed italic">
+            <p className="text-[#0A374C] text-[10px] sm:text-[11px] font-bold leading-relaxed italic">
               “ Behind every story is a partnership that matters. We've had the privilege of working with organizations that are shaping change, capturing their journeys through visuals that inform, inspire, and connect. ”
             </p>
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 sm:w-10 sm:h-10 opacity-80 pointer-events-none">
+            <div className="absolute bottom-2   right-2 w-8 h-8 sm:w-10 sm:h-10 opacity-80 pointer-events-none">
               <img src={cardDecorationBg} alt="" className="w-full h-full object-contain" />
             </div>
           </motion.div>
@@ -280,14 +302,14 @@ export default function Clients({ hideViewAllButton = false }) {
           {/* Bottom Grid: 2 rows, 3 cols */}
           <div className="grid grid-cols-3 gap-y-7 gap-x-3 items-center place-items-center">
             {/* Row 4 */}
-            <LogoItem client={{ name: "Mana Mahila Foundation", logo: manaMahilaLogo }} h="h-10" />
-            <LogoItem client={{ name: "National Horticulture Board", logo: nhbLogo }} h="h-10" />
-            <LogoItem client={{ name: "ImpactDash", logo: impactDashLogo }} h="h-6" />
+            <LogoItem client={{ name: "Mana Mahila Foundation", logo: manaMahilaLogo }} h="h-12" />
+            <LogoItem client={{ name: "National Horticulture Board", logo: nhbLogo }} h="h-12" />
+            <LogoItem client={{ name: "ImpactDash", logo: impactDashLogo }} h="h-12" />
 
             {/* Row 5 */}
-            <LogoItem client={{ name: "Government of Maharashtra", logo: govMahaLogo }} h="h-11" />
-            <LogoItem client={{ name: "Chandra Foundation", logo: chandraLogo }} h="h-10" />
-            <LogoItem client={{ name: "Krushak Mitra", logo: krushakMitraLogo }} h="h-9" />
+            <LogoItem client={{ name: "Government of Maharashtra", logo: govMahaLogo }} h="h-12" />
+            <LogoItem client={{ name: "Chandra Foundation", logo: chandraLogo }} h="h-12" />
+            <LogoItem client={{ name: "Krushak Mitra", logo: krushakMitraLogo }} h="h-12" />
           </div>
         </div>
 

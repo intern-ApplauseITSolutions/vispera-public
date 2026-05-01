@@ -206,10 +206,10 @@ export default function Documentaries({ searchQuery = "" }) {
                       {project.badge || project.category}
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 bg-[#0A374C]/80 backdrop-blur-[2px] p-3 z-10 transition-all duration-500 group-hover:opacity-0">
-                      <h3 className="text-white text-[10px] md:text-[11px] font-bold leading-tight line-clamp-1">{project.title}</h3>
+                      <h3 className="text-white text-[12px] md:text-[11px] font-bold leading-tight line-clamp-1">{project.title}</h3>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-15">
-                      <h3 className="text-white text-xs md:text-sm font-bold leading-tight text-center">{project.title}</h3>
+                      <h3 className="text-white text-[14px] md:text-sm font-bold leading-tight text-center">{project.title}</h3>
                     </div>
                     <div className="absolute -bottom-24 left-0 w-full flex justify-center pb-6 lg:pb-8 transition-all duration-500 ease-in-out group-hover:bottom-0 z-20">
                       <button className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg cursor-pointer">{project.isExternal ? "Visit Website" : "View"}</button>

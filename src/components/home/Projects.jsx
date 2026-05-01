@@ -318,9 +318,9 @@ export default function Projects() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className={`relative w-[95%] bg-[#0A374C] rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 flex flex-col items-stretch z-10 border border-dashed border-white/40 ${isFirstProjectModal ? "max-w-5xl lg:max-w-[128rem] max-h-[82vh]" : "max-w-2xl lg:max-w-5xl max-h-[92vh]"}`}
+              className="relative w-[95%] max-w-2xl lg:max-w-5xl bg-[#0A374C] rounded-2xl shadow-2xl p-4 md:p-6 lg:p-8 flex flex-col items-stretch z-10 border border-dashed border-white/40 max-h-[92vh] overflow-y-auto scrollbar-hide"
             >
-              <div className={`flex flex-col lg:grid gap-4 lg:gap-6 items-stretch ${isFirstProjectModal ? "lg:grid-cols-[6.5fr_5.5fr]" : "lg:grid-cols-[6fr_6fr]"}`}>
+              <div className="flex flex-col lg:grid lg:grid-cols-[5.5fr_6.5fr] gap-4 lg:gap-6 items-stretch">
                 {/* Top/Left: Image Section */}
                 <div className="relative w-full h-full">
                   <div className="absolute -top-[2px] left-1/2 -translate-x-1/2 z-20">
@@ -329,7 +329,7 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className={`rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full shadow-2xl bg-black/20 flex flex-col justify-center relative group cursor-pointer ${isFirstProjectModal ? "h-auto" : "h-full"}`}
+                  <div className="rounded-[1.25rem] overflow-hidden border-[3px] border-[#5EA4A4] w-full h-full shadow-2xl bg-black/20 flex flex-col justify-center relative group cursor-pointer"
                     onClick={() => {
                       if (selectedProject.link && !selectedProject.gallery) {
                         window.open(selectedProject.link, '_blank', 'noopener,noreferrer');
@@ -339,7 +339,7 @@ export default function Projects() {
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
-                      className={`w-full ${isFirstProjectModal ? "aspect-[16/9] min-h-[280px] lg:min-h-[320px] h-auto object-cover" : "h-full object-cover"}`}
+                      className="w-full h-full object-cover"
                     />
                     {/* Play Button Overlay */}
                     {[1, 2, 3, 4, 5, 7].includes(selectedProject.id) && (

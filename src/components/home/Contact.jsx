@@ -121,15 +121,28 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="flex flex-col items-center md:col-span-2 lg:col-span-1 order-3"
           >
-            <div className="mb-6 mt-8 md:mt-0 h-[140px] flex flex-col justify-end w-full max-w-[340px] md:hidden lg:flex">
-              <p className="text-[#5EA4A4] text-sm font-semibold tracking-widest uppercase mb-1 text-center sm:text-left">
+            <div className="mb-6 mt-8 md:mt-0 h-[140px] flex flex-col justify-end w-full max-w-[340px] md:flex lg:hidden items-center text-center">
+              <p className="text-[#5EA4A4] text-sm font-semibold tracking-widest uppercase mb-1 text-center">
                 Start a Conversation
               </p>
-              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] font-heading leading-tight text-center sm:text-left">
+              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] font-heading leading-tight text-center">
                 Let's Work Together
               </h2>
-              <p className="text-[#555] text-sm leading-relaxed mt-4 text-center sm:text-left">
-              Tell us about your project or idea-we’d love to collaborate. From concept to creation, we turn your vision into meaningful digital experiences.
+              <p className="text-[#555] text-sm leading-relaxed mt-4 text-center">
+              Tell us about your project or idea-we'd love to collaborate. From concept to creation, we turn your vision into meaningful digital experiences.
+              </p>
+            </div>
+
+            {/* Desktop: Start a Conversation content */}
+            <div className="mb-6 mt-8 md:mt-0 h-[140px] flex flex-col justify-end w-full max-w-[340px] hidden lg:flex items-center text-center">
+              <p className="text-[#5EA4A4] text-sm font-semibold tracking-widest uppercase mb-1 text-center">
+                Start a Conversation
+              </p>
+              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] font-heading leading-tight text-center">
+                Let's Work Together
+              </h2>
+              <p className="text-[#555] text-sm leading-relaxed mt-4 text-center">
+              Tell us about your project or idea-we'd love to collaborate. From concept to creation, we turn your vision into meaningful digital experiences.
               </p>
             </div>
 

@@ -188,7 +188,7 @@ export default function Websites({ searchQuery = "", sortBy = "Latest" }) {
                   className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-[304/237] bg-gray-200 shadow-md"
                 >
                   {project.image ? (
-                    <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" />
                   ) : (
                     <div className="absolute inset-0 w-full h-full bg-gray-300 flex items-center justify-center transition-transform duration-700 group-hover:scale-110">
                       <svg className="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -235,7 +235,7 @@ export default function Websites({ searchQuery = "", sortBy = "Latest" }) {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
                     <div className="absolute inset-0 w-full h-full bg-gray-300 flex items-center justify-center transition-transform duration-700 group-hover:scale-110">
@@ -380,7 +380,7 @@ export default function Websites({ searchQuery = "", sortBy = "Latest" }) {
                       <img
                         src={selectedProject.image}
                         alt={selectedProject.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     ) : (
                       <div className="w-full h-full bg-white flex items-center justify-center">
@@ -460,7 +460,7 @@ export default function Websites({ searchQuery = "", sortBy = "Latest" }) {
                             >
                               {/* Taller thumbnail frame */}
                               <div className="w-full h-[100px] lg:h-[150px] rounded-xl overflow-hidden border-[2px] border-[#5EA4A4]/80 shadow-md transition-all group-hover:border-[#5EA4A4]">
-                                <img src={img} alt="" className="w-full h-full object-cover" />
+                                <img src={img} alt="" className="w-full h-full object-contain" />
                               </div>
                             </motion.div>
                           ))}

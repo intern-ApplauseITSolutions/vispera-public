@@ -108,12 +108,12 @@ export default function FeaturedImpact() {
               transition={{ duration: 0.5 }}
               className="w-full h-full relative z-10"
             >
-              <div className="w-full mx-auto px-6 md:px-10 lg:px-14 xl:px-24 py-4 md:py-6 grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-6 xl:gap-14 items-stretch">
+              <div className="w-full mx-auto px-6 md:px-10 lg:px-14 xl:px-24 py-12 grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-6 xl:gap-14 items-stretch border-x-2 border-dashed border-white">
 
                 {/* Image Area - Card Style */}
                 <div className="xl:col-span-6 relative lg:max-w-[760px] lg:mx-auto xl:max-w-none">
                   {/* Badge */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-36 md:w-44 xl:w-48 pointer-events-none">
+                  <div className="absolute top-2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-36 md:w-44 xl:w-48 pointer-events-none">
                     <img src={tagImg} alt="" className="w-full h-auto" />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-white text-[8px] md:text-[10px] font-bold tracking-[0.2em] pb-1.5 md:pb-2">

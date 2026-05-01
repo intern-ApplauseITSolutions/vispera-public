@@ -103,7 +103,7 @@ export default function Digital() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A374C] mb-4 relative z-10"
+              className="text-xl sm:text-2xl md:text-[32px] font-bold text-[#0A374C] mb-4 relative z-10"
             >
               More Services to Explore
             </motion.h2>
@@ -112,7 +112,7 @@ export default function Digital() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 sm:justify-center">
             {remainingServices.map((service, index) => (
               <motion.div
                 key={service.id}

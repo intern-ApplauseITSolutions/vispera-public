@@ -25,7 +25,7 @@ const awards = [
 
 export default function Awards() {
   return (
-    <section id="awards" className="bg-bg-light overflow-hidden py-6 md:py-10">
+    <section id="awards" className="bg-bg-light overflow-hidden pt-0 pb-6 md:pb-10">
       {/* Header - Optimized for Mobile/Desktop Typography */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-6 md:mb-8">
         <div className="flex flex-col items-center relative">
@@ -79,7 +79,7 @@ export default function Awards() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="w-full lg:w-1/2 max-w-[626px] order-2 lg:order-1 mt-8 lg:mt-0"
+              className="w-full lg:w-1/2 max-w-[626px] order-2 lg:order-1 lg:mt-0"
             >
               <div className="relative w-full aspect-[626/352] transform hover:scale-[1.01] transition-transform duration-700">
                 <img
@@ -91,7 +91,7 @@ export default function Awards() {
             </motion.div>
 
             {/* Trophy Cards Section - Right on Desktop, Top on Mobile/Tab */}
-            <div className="flex flex-col md:flex-row lg:flex-nowrap justify-center gap-12 md:gap-4 lg:gap-6 items-center w-full lg:w-3/5 order-1 lg:order-2 md:mt-[10px] lg:mt-0 px-2 lg:px-0">
+            <div className="flex flex-col md:flex-row lg:flex-nowrap justify-center gap-12 md:gap-4 lg:gap-6 items-center w-full lg:w-3/5 order-1 lg:order-2 md:mt-[10px] lg:mt-0 mt-2 px-2 lg:px-0">
               {awards.map((award, index) => (
                 <motion.div
                   key={award.id}

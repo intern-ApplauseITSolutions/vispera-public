@@ -17,20 +17,22 @@ const services = [
   { id: 6, title: "DIGITAL MARKETING AND CONTENT STRATEGY", img: s6, route: "/services/digital-marketing" },
 ];
 
-export default function Services() {
+export default function Services({ hideSubheading = false }) {
   const navigate = useNavigate();
 
   return (
     <section id="services" className="py-2 md:py-4" style={{ backgroundColor: "#F7F5F2" }}>
       <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10">
 
-        <div className="flex flex-col items-center mb-10 relative">
+        <div className="flex flex-col items-center mt-4 mb-10 md:mt-6 md:mb-10 lg:mt-8 lg:mb-10 relative">
+          {!hideSubheading && (
           <p
             className="text-[#5EA4A4] font-semibold uppercase text-center align-middle text-[16px] leading-[42px] tracking-normal"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
             OUR SERVICES
           </p>
+          )}
           <div className="relative inline-block mt-[-8px]">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -89,11 +91,11 @@ function ServiceCard({ service, delay = 0, navigate }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay }}
-      className="bg-white rounded-2xl p-2 sm:p-3 flex flex-col items-center gap-1 sm:gap-2 hover:shadow-md transition-shadow duration-300 cursor-pointer max-w-[250px] w-full mx-auto"
+      className="bg-white rounded-2xl p-3 sm:p-4 flex flex-col items-center gap-3 hover:shadow-md transition-shadow duration-300 cursor-pointer max-w-[240px] sm:max-w-[280px] lg:max-w-none mx-auto"
       style={{ border: "1px solid #e8e4dc" }}
       onClick={handleClick}
     >
-      <div className="w-full h-20 sm:h-28 flex items-center justify-center">
+      <div className="w-full h-20 sm:h-24 flex items-center justify-center">
         <img
           src={service.img}
           alt={service.title}

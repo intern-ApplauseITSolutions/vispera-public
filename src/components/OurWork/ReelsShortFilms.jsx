@@ -195,7 +195,7 @@ export default function ReelsShortFilms({ searchQuery = "", sortBy = "Latest" })
                   className="group relative rounded-2xl overflow-hidden cursor-pointer aspect-[304/237] bg-gray-200 shadow-md"
                 >
                   {project.image ? (
-                    <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" />
                   ) : (
                     <div className="absolute inset-0 w-full h-full bg-gray-300 flex items-center justify-center transition-transform duration-700 group-hover:scale-110">
                       <svg className="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -242,7 +242,7 @@ export default function ReelsShortFilms({ searchQuery = "", sortBy = "Latest" })
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
                     <div className="absolute inset-0 w-full h-full bg-gray-300 flex items-center justify-center transition-transform duration-700 group-hover:scale-110">
@@ -403,7 +403,7 @@ export default function ReelsShortFilms({ searchQuery = "", sortBy = "Latest" })
                           className={`group relative rounded-2xl overflow-hidden cursor-pointer ${cardSize} bg-gray-200 shadow-md`}
                         >
                           {/* Background Image */}
-                          <img src={img} alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                          <img src={img} alt="" className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110" />
 
                           {/* Primary Overlay on Hover */}
                           <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-[5]" />

@@ -5,6 +5,7 @@ import headingBg from "../../assets/images/decoration-heading-bg.svg";
 export default function OurWorkHeader({ onSearch, onSort }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedSort, setSelectedSort] = useState("All");
 
   const sortOptions = [
     "All",
@@ -22,6 +23,7 @@ export default function OurWorkHeader({ onSearch, onSort }) {
   };
 
   const handleSort = (option) => {
+    setSelectedSort(option);
     onSort(option);
     setIsDropdownOpen(false);
   };
@@ -74,9 +76,9 @@ export default function OurWorkHeader({ onSearch, onSort }) {
           <div className="relative w-full sm:w-64 md:w-72 lg:w-80 xl:w-96">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="w-full px-6 py-3 sm:py-3.5 md:py-2 rounded-2xl border-2 border-gray-200 bg-white text-gray-500 hover:border-gray-300 transition-all flex items-center justify-between text-sm md:text-base"
+              className="w-full px-6 py-3 sm:py-3.5 md:py-2 rounded-2xl border-2 border-gray-200 bg-white text-gray-700 hover:border-gray-300 transition-all flex items-center justify-between text-sm md:text-base"
             >
-              <span>Sort by...</span>
+              <span>{selectedSort}</span>
               <ChevronDown className={`w-5 h-5 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
 

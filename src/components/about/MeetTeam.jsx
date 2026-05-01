@@ -144,7 +144,7 @@ function TeamCard({ member, delay = 0, onClick, index = 0 }) {
 
 function TeamModal({ member, onClose }) {
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-start justify-center p-4 pt-10 md:pt-4 overflow-y-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -157,19 +157,18 @@ function TeamModal({ member, onClose }) {
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 30 }}
-          className="relative bg-white w-full rounded-[8px] overflow-hidden shadow-2xl flex flex-col md:flex-row cursor-default"
+          className="relative bg-white w-full rounded-[8px] overflow-hidden shadow-2xl flex flex-col md:flex-row cursor-default my-4 md:my-auto"
           style={{ 
             maxWidth: '920px', 
-            minHeight: '400px',
-            marginTop: "34px"
+            minHeight: '400px'
           }}
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-40 text-white md:text-gray-400 hover:text-[#0A374C] transition-all hover:rotate-90 duration-300"
+            className="absolute top-4 right-4 z-40 bg-white/90 hover:bg-white text-gray-700 hover:text-[#0A374C] rounded-full p-2 shadow-lg transition-all hover:rotate-90 duration-300"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>

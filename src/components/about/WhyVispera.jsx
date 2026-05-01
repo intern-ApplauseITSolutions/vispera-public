@@ -10,16 +10,16 @@ import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
 export default function WhyVispera() {
   return (
-    <section className="pt-8 md:pt-12 pb-0" style={{ backgroundColor: "#F7F5F2" }}>
+    <section className="pt-16 md:pt-20 pb-0" style={{ backgroundColor: "#F7F5F2" }}>
       <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24">
 
         {/* Header */}
-        <div className="relative w-fit mx-auto mb-16 md:mb-20">
+        <div className="relative w-fit mx-auto mb-8 md:mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative z-10 text-4xl md:text-5xl lg:text-[32px] font-bold text-[#0A374C] font-heading text-center"
+            className="relative z-10 text-[28px] sm:text-[32px] md:text-5xl lg:text-[32px] font-bold text-[#0A374C] font-heading text-center"
           >
             Why Vispera Studios?
           </motion.h2>
@@ -28,7 +28,7 @@ export default function WhyVispera() {
           </div>
         </div>
 
-        <div className="flex flex-row flex-nowrap justify-start xl:justify-center items-center xl:items-start gap-6 mt-4 pb-8 pt-0 -mx-6 px-6 xl:mx-0 xl:px-0 overflow-x-auto xl:overflow-x-visible snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="flex flex-row flex-nowrap justify-start items-center gap-6 mt-4 pb-8 pt-0 -mx-6 px-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] xl:justify-center xl:mx-0 xl:px-0 xl:overflow-x-visible">
 
           {/* Card 1: Stories That Create Impact */}
           <motion.div
