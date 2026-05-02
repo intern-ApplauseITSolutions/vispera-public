@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import DummyProjectCard from "./DummyProjectCard";
-import logo1 from "../../assets/images/OurWork4/logo1.webp";
+import logo1 from "../../assets/images/OurWork4/logo1.png";
 import logo2 from "../../assets/images/OurWork4/logo2.png";
 import logo4 from "../../assets/images/OurWork4/logo4.png";
 import logo5 from "../../assets/images/OurWork4/logo5.png";

@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import DummyProjectCard from "./DummyProjectCard";
 
-import ncpedpImg from "../../assets/images/NCPEDP-Javed-Abidi-Fellowship-on-Disability.png";
-import gizImg from "../../assets/images/GIZ-Green-Innovation-Centres-Agriculture-Food-Sector.png";
-import greenInnovImg from "../../assets/images/Green-Innovation-Centres-for-the-Agriculture-and-Food-Sector.png";
-import everyDropImg from "../../assets/images/Every-Drop-Counts!.png";
+import ncpedpImg from "../../assets/images/OurWork/img1.png";
+import gizImg from "../../assets/images/OurWork/img3.png";
+import greenInnovImg from "../../assets/images/OurWork/img2.png";
+import everyDropImg from "../../assets/images/OurWork/img4.png";
 import img5 from "../../assets/images/OurWork/img5.png";
 
 // Gallery Images for GIZ

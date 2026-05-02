@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { ViewButton, WatchVideoButton, ViewAllButton } from "../common";
 
-import ncpedpImg from "../../assets/images/NCPEDP-Javed-Abidi-Fellowship-on-Disability.png";
-import krushakImg from "../../assets/images/Krushak-Mitra-Agro-Services-Pvt-Ltd.png";
-import gizImg from "../../assets/images/GIZ-Green-Innovation-Centres-Agriculture-Food-Sector.png";
+import ncpedpImg from "../../assets/images/OurWork/img1.png";
+import krushakImg from "../../assets/images/OurWork1/img1.png";
+import gizImg from "../../assets/images/OurWork/img3.png";
 import jalImg from "../../assets/images/Jal-Srot-Punarjivikaran.png";
-import everyDropImg from "../../assets/images/Every-Drop-Counts!.png";
-import greenInnovImg from "../../assets/images/Green-Innovation-Centres-for-the-Agriculture-and-Food-Sector.png";
-import shamImg from "../../assets/images/Sham-Sundar-Misal-Nashik.png";
-import khedImg from "../../assets/images/aloma-logo-1.webp";
+import everyDropImg from "../../assets/images/OurWork/img4.png";
+import greenInnovImg from "../../assets/images/OurWork/img2.png";
+import shamImg from "../../assets/images/OurWork1/img2.png";
+import khedImg from "../../assets/images/OurWork4/logo1.png";
 import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
 // Gallery Images for GIZ
