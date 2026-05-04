@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/images/transparent-logo.png";
 import { StartProjectButton } from "../common";
+import InquiryModal from "../common/InquiryModal";
 import SectionIndicator from "../home/SectionIndicator";
 
 const navLinks = [
@@ -18,6 +19,7 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -25,6 +27,14 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleMobileMenuButtonClick = () => {
+    setIsMobileMenuOpen(false);
+    // Wait for menu to close before opening modal
+    setTimeout(() => {
+      setIsModalOpen(true);
+    }, 300);
+  };
 
   return (
     <>
@@ -34,7 +44,7 @@ export default function Navbar() {
       <div className="w-full px-8 md:px-16">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center shrink-0 -ml-6">
+          <Link to="/" className="flex items-center shrink-0 -ml-8">
             <img
               src={logo}
               alt="Vispera Studios"
@@ -62,11 +72,13 @@ export default function Navbar() {
           <StartProjectButton 
             variant="dark"
             className="!hidden lg:!inline-block"
+            disableModal={true}
+            onClick={() => setIsModalOpen(true)}
           />
 
           {/* Mobile/Tablet toggle — visible below lg */}
           <button
-            className="lg:hidden text-[#0A374C] p-2"
+            className="lg:hidden text-[#0A374C] p-2 cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,18 +107,20 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <div className="flex justify-start">
-                <StartProjectButton 
-                  variant="dark"
-                  className="text-[10px] py-2.5 px-8"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                />
-              </div>
+              <StartProjectButton 
+                variant="dark"
+                className="text-[10px] py-2.5 px-6 w-fit"
+                disableModal={true}
+                onClick={handleMobileMenuButtonClick}
+              />
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </nav>
+    
+    {/* Inquiry Modal - Managed at Navbar level */}
+    <InquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     
     {/* Section Indicator - Fixed below navbar - Only on home page */}
     {location.pathname === "/" && (

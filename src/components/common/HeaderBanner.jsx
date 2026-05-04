@@ -28,7 +28,7 @@ export default function HeaderBanner({ title }) {
  
       {/* Clean Full-Bleed Image with High-Centered Title */}
 <div className="absolute inset-x-0 top-1/2 -translate-y-[60%] flex items-center px-6 sm:px-10 md:px-14 lg:px-20 z-10">
-<h1 className="text-white text-sm sm:text-base md:text-2xl lg:text-4xl font-bold font-heading drop-shadow-2xl ">
+<h1 className="text-white text-sm sm:text-base md:text-2xl lg:text-4xl font-bold drop-shadow-2xl" style={{ fontFamily: "'Outfit', sans-serif" }}>
           {title}
 </h1>
 </div>

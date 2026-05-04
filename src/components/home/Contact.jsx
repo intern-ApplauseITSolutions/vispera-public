@@ -1,13 +1,37 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import contactImg from "../../assets/images/contact/contactus.png";
 import sectionBg from "../../assets/images/our-client-bg.png";
 import headingBg from "../../assets/images/decoration-heading-bg.svg";
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsLoading(false);
+      // Add your form submission logic here
+    }, 2000);
+  };
+
   return (
     <section id="contact" className="py-8 md:py-12 lg:pt-20 xl:pt-12 relative overflow-hidden" style={{ 
-      backgroundColor: '#F3F0EF'
+      backgroundColor: '#F7F5F2'
     }}>
+      {/* Loading Overlay */}
+      {isLoading && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center" style={{ backgroundColor: 'rgba(10, 55, 76, 0.9)' }}>
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-16 h-16 border-4 border-[#5EA4A4] border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-white text-lg font-semibold">Sending your message...</p>
+          </div>
+        </div>
+      )}
+      
       {/* Subtle Texture Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:24px_24px]" />
       
@@ -27,7 +51,7 @@ export default function Contact() {
               <p className="text-[#5EA4A4] text-sm font-semibold tracking-widest uppercase mb-1 text-center sm:text-left">
                 Always Here to Connect
               </p>
-              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] font-heading leading-tight text-center sm:text-left">
+              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] leading-tight text-center sm:text-left" style={{ fontFamily: "'Outfit', sans-serif" }}>
                 Let's Tell Your Story
               </h2>
               <p className="text-[#555] text-sm leading-relaxed mt-4 text-center sm:text-left">
@@ -104,11 +128,11 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col items-center md:col-span-1 lg:col-span-1 order-1 md:order-2"
           >
-            <div className="relative rounded-[1rem] overflow-hidden w-full max-w-[305px] md:max-w-[345px] lg:max-w-[385px] xl:max-w-[405px] h-[420px] sm:h-[480px] md:h-[520px] lg:h-[550px] xl:h-[570px]">
+            <div className="relative rounded-[1rem] overflow-hidden w-full max-w-[305px] md:max-w-[345px] lg:max-w-[385px] xl:max-w-[405px] h-[420px] sm:h-[480px] md:h-[520px] lg:h-[480px] xl:h-[550px]">
               <img
                 src={contactImg}
                 alt="Contact Vispera Studios"
-                className="w-full h-full object-contain object-center z-10"
+                className="w-full h-full object-fit object-bottom z-10"
               />
             </div>
           </motion.div>
@@ -125,7 +149,7 @@ export default function Contact() {
               <p className="text-[#5EA4A4] text-sm font-semibold tracking-widest uppercase mb-1 text-center">
                 Start a Conversation
               </p>
-              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] font-heading leading-tight text-center">
+              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] leading-tight text-center" style={{ fontFamily: "'Outfit', sans-serif" }}>
                 Let's Work Together
               </h2>
               <p className="text-[#555] text-sm leading-relaxed mt-4 text-center">
@@ -138,7 +162,7 @@ export default function Contact() {
               <p className="text-[#5EA4A4] text-sm font-semibold tracking-widest uppercase mb-1 text-center">
                 Start a Conversation
               </p>
-              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] font-heading leading-tight text-center">
+              <h2 className="text-3xl lg:text-[2.25rem] font-bold text-[#0A374C] leading-tight text-center" style={{ fontFamily: "'Outfit', sans-serif" }}>
                 Let's Work Together
               </h2>
               <p className="text-[#555] text-sm leading-relaxed mt-4 text-center">
@@ -186,7 +210,7 @@ export default function Contact() {
               <div className="p-4 sm:p-6 flex justify-start">
                 <button
                   type="submit"
-                  className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-lg shadow-lg transition-all duration-300"
+                  className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-lg shadow-lg transition-all duration-300 cursor-pointer"
                 >
                   Send Message
                 </button>

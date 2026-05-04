@@ -85,7 +85,7 @@ export default function VisualStory() {
       <div className="max-w-7xl mx-auto px-8 md:px-16 py-6 sm:py-8">
         <button
           onClick={() => navigate("/services")}
-          className="flex items-center gap-2 text-[#5EA4A4] hover:text-[#4D9090] font-semibold transition-colors text-sm sm:text-base"
+          className="flex items-center gap-2 text-[#5EA4A4] hover:text-[#4D9090] font-semibold transition-colors text-sm sm:text-base cursor-pointer"
         >
           <ArrowLeft size={18} className="sm:w-5 sm:h-5" />
           Back to services
@@ -241,7 +241,7 @@ export default function VisualStory() {
         <div className="flex justify-center">
           <Button
             onClick={() => navigate("/our-work")}
-            className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-3 sm:py-4 px-4 sm:px-8 rounded-xl transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-[#5EA4A4]/20 uppercase text-xs tracking-[0.2em]"
+            className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white font-bold py-3 sm:py-4 px-4 sm:px-8 rounded-xl transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-[#5EA4A4]/20 uppercase text-xs tracking-[0.2em] cursor-pointer"
           >
             Explore Our Work
           </Button>

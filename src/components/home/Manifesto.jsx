@@ -34,8 +34,7 @@ export default function Manifesto() {
               leading-[19px] sm:leading-[24px] md:leading-[1.6]
               tracking-[0.01em] md:tracking-wide 
               uppercase
-              font-heading
-            ">
+            " style={{ fontFamily: "'Outfit', sans-serif" }}>
               "We design<br className="block md:hidden"/> experiences, not<br className="block md:hidden"/> just websites. We<br className="block md:hidden"/> craft stories, not<br className="block md:hidden"/> just videos. We<br className="block md:hidden"/> build brands that<br className="block md:hidden"/> move people."
             </h2>
           </div>

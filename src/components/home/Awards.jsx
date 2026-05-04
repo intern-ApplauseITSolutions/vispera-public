@@ -47,7 +47,7 @@ export default function Awards() {
             <h2
               className="text-[#0A374C] relative z-10 text-center text-[24px] sm:text-[28px] md:text-[32px] leading-[30px] sm:leading-[38px] md:leading-[42px]"
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 600,
                 letterSpacing: "0.02em",
                 textAlign: "center"

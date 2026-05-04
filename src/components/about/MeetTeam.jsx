@@ -58,7 +58,8 @@ export default function MeetTeam() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative z-10 text-4xl md:text-5xl lg:text-[32px] font-bold text-[#0A374C] font-heading text-center"
+            className="relative z-10 text-4xl md:text-5xl lg:text-[32px] font-bold text-[#0A374C] text-center"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Meet Our Team
           </motion.h2>

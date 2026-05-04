@@ -62,7 +62,7 @@ export default function About({ showButton = true }) {
                 <p
                   className="text-[#0A374C] text-[28px] md:text-[32px]"
                   style={{
-                    fontFamily: "'Playfair Display', serif",
+                    fontFamily: "'Outfit', sans-serif",
                     fontWeight: 600,
                     lineHeight: "42px",
                     textAlign: "center",

@@ -48,7 +48,7 @@ export default function Services({ hideSubheading = false }) {
               viewport={{ once: true }}
               className="text-[#0A374C] relative z-10 text-center"
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 600,
                 fontSize: "32px",
                 lineHeight: "42px",

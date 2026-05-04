@@ -59,23 +59,29 @@ const bottomRow = [
 ];
 
 const LogoItem = ({ client, h = "h-12 md:h-14" }) => {
-  const largeLogos = [
-    "Atal Bhujal Yojana",
-    "TATA Trusts", 
-    "Ministry of Agriculture",
-    "Government of Maharashtra",
-    "Krushak Mitra",
-    "Lokatmik Foundation",
-    "National Horticulture Board",
-    "Concern India Foundation",
-    "NCPEDP",
-    "Yuva Mitra",
-    "Mana Mahila Foundation",
-    "Safety Research Foundation"
-  ];
+  // Special case for Lokatmik Foundation (rowl3) - extra large
+  const isLokatmik = client.name === "Lokatmik Foundation";
   
-  const isLarge = largeLogos.includes(client.name);
-  const heightClass = isLarge ? "h-16 md:h-20" : `h-12 md:${h.split(' ')[1]}`;
+  // NCPEDP (rowl5) and Chandra Foundation (rowf5) - large
+  const isNCPEDP = client.name === "NCPEDP";
+  const isChandra = client.name === "Chandra Foundation";
+  
+  // Logos that need to be smaller
+  const smallerLogos = ["CFTI", "ImpactDash", "Yuva Mitra"];
+  const isSmaller = smallerLogos.includes(client.name);
+  
+  // Safety Research Foundation - medium size
+  const isSafety = client.name === "Safety Research Foundation";
+  
+  const heightClass = isLokatmik
+    ? "h-32 md:h-40" 
+    : isNCPEDP || isChandra
+    ? "h-24 md:h-32"
+    : isSmaller 
+    ? "h-8 md:h-10"
+    : isSafety
+    ? "h-12 md:h-16"
+    : "h-16 md:h-20";
   
   return (
     <div className="flex flex-col items-center justify-center p-0">
@@ -124,7 +130,7 @@ export default function Clients({ hideViewAllButton = false, hideHeading = false
             <h2 
               className="text-[#0A374C] relative z-10 text-center text-2xl md:text-[28px] lg:text-[32px]"
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 600,
                 lineHeight: "42px",
                 letterSpacing: "0.02em",

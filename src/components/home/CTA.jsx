@@ -53,7 +53,7 @@ export default function CTA() {
                 />
               </motion.div>
 
-              <h2 className="text-3xl md:text-[40px] lg:text-3xl font-bold text-white font-heading leading-tight drop-shadow-md relative z-10 mx-auto w-fit">
+              <h2 className="text-3xl md:text-[40px] lg:text-3xl font-bold text-white leading-tight drop-shadow-md relative z-10 mx-auto w-fit" style={{ fontFamily: "'Outfit', sans-serif" }}>
                 Ready to tell your story?
               </h2>
             </div>

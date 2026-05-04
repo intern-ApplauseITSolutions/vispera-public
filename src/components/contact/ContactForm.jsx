@@ -149,7 +149,7 @@ export default function ContactForm() {
               <div className="p-4">
                 <button
                   type="submit"
-                  className="w-full text-white font-semibold text-sm py-3 rounded-lg transition-all duration-300 hover:opacity-90"
+                  className="w-full text-white font-semibold text-sm py-3 rounded-lg transition-all duration-300 hover:opacity-90 cursor-pointer"
                   style={{ backgroundColor: "#5EA4A4" }}
                 >
                   Send Message

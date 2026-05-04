@@ -174,7 +174,7 @@ export default function Projects() {
                 <h2
                   className="text-[#0A374C] relative z-10 text-center lg:text-left"
                   style={{
-                    fontFamily: "'Playfair Display', serif",
+                    fontFamily: "'Outfit', sans-serif",
                     fontWeight: 600,
                     fontSize: "32px",
                     lineHeight: "42px",
@@ -197,7 +197,7 @@ export default function Projects() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 md:px-6 py-2.5 rounded-full text-[9px] md:text-[10px] lg:text-xs font-bold tracking-wider transition-all duration-300 border font-body whitespace-nowrap ${activeCategory === cat
+                  className={`px-4 md:px-6 py-2.5 rounded-full text-[9px] md:text-[10px] lg:text-xs font-bold tracking-wider transition-all duration-300 border font-body whitespace-nowrap cursor-pointer ${activeCategory === cat
                     ? "bg-[#0A374C] text-white border-[#0A374C] shadow-md"
                     : "bg-white text-gray-400 border-gray-200 hover:border-[#5EA4A4] hover:text-[#5EA4A4]"
                     }`}

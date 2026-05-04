@@ -77,7 +77,7 @@ export default function FeaturedImpact() {
             <h3 
               className="text-[#0A374C] relative z-10 text-center text-[26px] sm:text-[28px] md:text-[32px] leading-[34px] sm:leading-[38px] md:leading-[42px]"
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 600,
                 letterSpacing: "0.02em",
                 textAlign: "center",
@@ -147,7 +147,7 @@ export default function FeaturedImpact() {
                 {/* Text Content - Aligned to match image height */}
                 <div className="xl:col-span-6 text-white flex flex-col justify-between py-1 lg:max-w-[760px] lg:mx-auto xl:max-w-none">
                   <div className="space-y-3">
-                    <h3 className="text-base md:text-lg xl:text-xl font-bold leading-snug font-heading">{story.title}</h3>
+                    <h3 className="text-base md:text-lg xl:text-xl font-bold leading-snug" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}>{story.title}</h3>
 
                     <div className="space-y-2">
                       <p className="flex items-start gap-2">

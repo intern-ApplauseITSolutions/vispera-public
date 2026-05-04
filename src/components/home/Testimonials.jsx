@@ -50,10 +50,10 @@ export default function Testimonials({
       id="testimonials"
       className={clsx('pb-16 md:pb-14 lg:pb-24 pt-8 md:pt-12 lg:pt-16 overflow-hidden', className)}
       style={{
-        backgroundColor: '#F3F0EF',
+        backgroundColor: '#F7F5F2',
         backgroundImage: `url(${sectionBg})`,
-        backgroundSize: '80% auto',
-        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundPosition: 'right center',
         backgroundRepeat: 'no-repeat',
       }}
     >
@@ -78,7 +78,7 @@ export default function Testimonials({
               <h2
                 className="text-[#0A374C] relative z-10 text-center text-2xl md:text-[28px]"
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Outfit', sans-serif",
                   fontWeight: 600,
                   lineHeight: "42px",
                   letterSpacing: "0.02em",
@@ -98,28 +98,39 @@ export default function Testimonials({
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-stretch">
 
           {/* Left Side - Identity Card (Starts from left edge) */}
-          <div className="hidden lg:flex lg:w-[30%] bg-primary text-white rounded-r-[2rem] lg:rounded-l-none p-10 lg:pl-16 flex-col justify-center relative overflow-hidden shadow-2xl">
+          <div className="hidden lg:flex lg:w-[38%] xl:w-[34%] bg-primary text-white rounded-r-[2rem] lg:rounded-l-none p-8 lg:pl-12 xl:p-10 xl:pl-16 flex-col justify-center relative overflow-hidden shadow-2xl">
 
 
             <div className="relative mb-3">
-              <SectionHeading
-                subtitle="TESTIMONIALS"
-                title="What Our Clients Say"
-                align="left"
-                className="[&_p]:text-secondary [&_h2]:text-white [&_h2]:text-2xl [&_h2]:lg:text-4xl [&_h2]:mb-0 relative z-10"
-              />
+              <p
+                className="text-secondary text-sm lg:text-sm xl:text-base font-semibold tracking-widest uppercase mb-2"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                }}
+              >
+                TESTIMONIALS
+              </p>
+              <h2
+                className="text-white text-xl lg:text-[24px] xl:text-[28px] font-semibold leading-tight whitespace-nowrap relative z-10"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                What Our Clients Say
+              </h2>
               <div
-                className="absolute top-4 left-[220px] md:left-[260px] lg:left-[320px] w-12 h-12 z-0 pointer-events-none"
+                className="absolute top-4 -right-6 lg:-right-1 xl:-right-6 2xl:-right-3 w-8 h-8 lg:w-10 lg:h-10 z-0 pointer-events-none"
                 style={{
                   filter: "invert(61%) sepia(39%) saturate(420%) hue-rotate(131deg) brightness(150%) contrast(87%)",
-                  opacity: 2
+                  opacity: 0.6
                 }}
               >
                 <img src={headingBg} alt="" className="w-full h-full object-contain" />
               </div>
             </div>
             <p
-              className="text-white text-sm leading-5 opacity-90 font-medium text-justify"
+              className="text-white text-sm lg:text-sm xl:text-base leading-relaxed opacity-90 font-medium"
               style={{ fontFamily: "'Inter', sans-serif", wordSpacing: '-0.15em' }}
             >
               We Work Closely With Organizations To Craft Authentic Visual Stories That Connect, Inspire, And Create Meaningful Impact.
@@ -127,19 +138,20 @@ export default function Testimonials({
           </div>
 
           {/* Right Side - Interactive Carousel (Desktop/Tablet) */}
-          <div className="hidden md:block w-full lg:w-2/3 relative px-6 md:px-12 lg:pr-12 lg:pl-0">
+          <div className="hidden md:block w-full lg:w-[62%] xl:w-2/3 relative px-6 md:px-12 lg:px-6 xl:px-12 lg:pr-8 xl:pr-12 lg:pl-0 xl:pl-0">
             <div className="flex flex-col md:flex-row gap-8 lg:gap-8 items-center h-full">
 
               {/* Image Box with Floating Overlap */}
               <div className="relative flex-shrink-0">
                 {/* Decorative Teal Box */}
-                <div className="bg-secondary rounded-[1.5rem] relative w-36 h-64 md:w-44 md:h-72 lg:w-52 lg:h-80 shadow-lg">
+                <div className="bg-secondary rounded-[1.5rem] relative w-36 h-64 md:w-44 md:h-72 lg:w-40 lg:h-72 xl:w-52 xl:h-80 2xl:w-48 2xl:h-80 shadow-lg">
                   {/* Actual Photo Card - Overlapping to the right */}
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-40 h-40 md:w-44 md:h-44 lg:w-54 lg:h-54">
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-40 h-40 md:w-44 md:h-44 lg:w-44 lg:h-44 xl:w-54 xl:h-54 2xl:w-52 2xl:h-52">
                     <img
                       src={currentTestimonial.image}
                       alt={currentTestimonial.name}
                       className="w-full h-full rounded-[1.25rem] object-cover shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+                      style={{ objectPosition: currentTestimonial.id === 1 ? '50% 5%' : '50% 10%' }}
                     />
 
                   </div>
@@ -149,14 +161,14 @@ export default function Testimonials({
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
                   <button
                     onClick={handlePrevSlide}
-                    className="w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-white text-primary rounded-full flex items-center justify-center transition-all shadow-lg backdrop-blur-md border border-white/40 group"
+                    className="w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-white text-primary rounded-full flex items-center justify-center transition-all shadow-lg backdrop-blur-md border border-white/40 group cursor-pointer"
                   >
                     <ChevronLeftIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </button>
 
                   <button
                     onClick={handleNextSlide}
-                    className="w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-white text-primary rounded-full flex items-center justify-center transition-all shadow-lg backdrop-blur-md border border-white/40 group"
+                    className="w-10 h-10 md:w-12 md:h-12 bg-white/30 hover:bg-white text-primary rounded-full flex items-center justify-center transition-all shadow-lg backdrop-blur-md border border-white/40 group cursor-pointer"
                   >
                     <ChevronRightIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </button>
@@ -164,9 +176,9 @@ export default function Testimonials({
               </div>
 
               {/* Textual Content Section */}
-              <div className="flex-1 pl-4 md:pl-16 lg:pl-32 pr-6 md:pr-8 lg:pr-12">
+              <div className="flex-1 pl-4 md:pl-16 lg:pl-16 xl:pl-32 pr-6 md:pr-8 lg:pr-6 xl:pr-12">
                 <p
-                  className="text-primary text-sm leading-5 mb-10 font-medium text-justify tracking-[0.02em] max-w-[520px] whitespace-pre-line"
+                  className="text-primary text-sm md:text-base lg:text-sm xl:text-base 2xl:text-lg leading-relaxed mb-10 font-medium text-justify tracking-[0.02em] max-w-[520px]"
                   style={{ fontFamily: "'Inter', sans-serif", wordSpacing: '-0.15em' }}
                 >
                   {currentTestimonial.quote}
@@ -206,7 +218,8 @@ export default function Testimonials({
                     style={{
                       width: '130px',
                       height: '98px',
-                      borderRadius: '12px'
+                      borderRadius: '12px',
+                      objectPosition: currentTestimonial.id === 1 ? '50% 5%' : '50% 10%'
                     }}
                   />
                 </div>
@@ -232,10 +245,10 @@ export default function Testimonials({
               <div className="flex flex-col items-center gap-4">
                 {/* Arrows */}
                 <div className="flex items-center gap-5">
-                  <button onClick={handlePrevSlide} className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 bg-white/10 hover:bg-white hover:text-[#5EA4A4] active:scale-95 transition-all">
+                  <button onClick={handlePrevSlide} className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 bg-white/10 hover:bg-white hover:text-[#5EA4A4] active:scale-95 transition-all cursor-pointer">
                     <ChevronLeftIcon className="w-5 h-5 ml-0.5" />
                   </button>
-                  <button onClick={handleNextSlide} className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 bg-white/10 hover:bg-white hover:text-[#5EA4A4] active:scale-95 transition-all">
+                  <button onClick={handleNextSlide} className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 bg-white/10 hover:bg-white hover:text-[#5EA4A4] active:scale-95 transition-all cursor-pointer">
                     <ChevronRightIcon className="w-5 h-5 mr-0.5" />
                   </button>
                 </div>

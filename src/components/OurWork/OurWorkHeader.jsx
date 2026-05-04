@@ -37,7 +37,7 @@ export default function OurWorkHeader({ onSearch, onSort }) {
             <h2
               className="text-[#0A374C] relative z-10 text-center text-2xl sm:text-3xl md:text-4xl lg:text-[32px]"
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 600,
                 lineHeight: "1.3",
                 letterSpacing: "0.02em",

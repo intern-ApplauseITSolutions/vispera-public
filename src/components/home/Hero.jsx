@@ -15,7 +15,7 @@ export default function Hero() {
               loop
               muted
               playsInline
-              className="w-full h-auto max-h-[700px] md:max-h-[400px] lg:max-h-[380px] object-cover"
+              className="w-full h-auto max-h-[950px] md:max-h-[425px] lg:max-h-[405px] object-cover"
             />
           </div>
 
@@ -36,8 +36,8 @@ export default function Hero() {
               <p
                 className="hidden md:block text-center text-[#1a1a1a] align-middle md:text-[16px] lg:text-[22px]"
                 style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontWeight: 800,
+                  fontFamily: "'Outfit', sans-serif",
+                  fontWeight: 700,
                   lineHeight: '20px',
                   letterSpacing: '0.04em',
                   textTransform: 'capitalize'
@@ -57,8 +57,8 @@ export default function Hero() {
                 <p 
                   className="text-center text-[#0A374C]"
                   style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontWeight: 800,
+                    fontFamily: "'Outfit', sans-serif",
+                    fontWeight: 700,
                     fontSize: '10px',
                     lineHeight: '15px',
                     letterSpacing: '0.04em',

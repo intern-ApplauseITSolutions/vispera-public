@@ -159,7 +159,7 @@ export default function FilmsFromProject({ searchQuery = "", sortBy = "Latest" }
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="space-y-1 relative w-fit">
               <div className="relative">
-                <h2 className="font-bold text-[#0A374C] font-heading leading-tight relative z-10 flex items-baseline gap-3">
+                <h2 className="font-bold text-[#0A374C] leading-tight relative z-10 flex items-baseline gap-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
                   <span className="text-6xl md:text-7xl" style={{ color: "#5EA4A452" }}>04</span>
                   <span className="text-2xl md:text-3xl">Films from the Project</span>
                 </h2>
@@ -273,7 +273,7 @@ export default function FilmsFromProject({ searchQuery = "", sortBy = "Latest" }
 
                   {/* Hover Action Button (Slides Up to Bottom) */}
                   <div className="absolute -bottom-24 left-0 w-full flex justify-center pb-6 lg:pb-8 transition-all duration-500 ease-in-out group-hover:bottom-0 z-20">
-                    <button className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg">
+                    <button className="bg-[#5EA4A4] hover:bg-[#0A374C] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded shadow-lg cursor-pointer">
                       Watch Video
                     </button>
                   </div>

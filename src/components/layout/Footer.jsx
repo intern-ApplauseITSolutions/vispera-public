@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { StartProjectButton } from "../common";
 import logo from "../../assets/images/transparent-logo.png";
-import desktopFooter from "../../assets/images/footer-img.png";
+import desktopFooter from "../../assets/images/Footer/dextopfooter.png";
 import tabFooter from "../../assets/images/Tablet/footer.png";
 import mobileFooter from "../../assets/images/Mobile/footer-mobile.png";
 import footerScanner from "../../assets/images/qr.png";
@@ -70,7 +70,7 @@ export default function Footer() {
         className="hidden lg:block absolute inset-0"
         style={{
           backgroundImage: `url(${desktopFooter})`,
-          backgroundSize: "cover",
+          backgroundSize: "100% 100%",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
@@ -79,8 +79,8 @@ export default function Footer() {
 
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 sm:pt-12 md:pt-40 lg:pt-56 xl:pt-56 pb-2">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 sm:pt-14 md:pt-20 lg:pt-24 xl:pt-24 pb-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:pt-16 gap-8 lg:gap-12">
 
           {/* Col 1 — Brand */}
           <div className="space-y-5">
@@ -108,7 +108,7 @@ export default function Footer() {
           </div>
 
           {/* Col 2 — Quick Links */}
-          <div className="space-y-5 lg:pt-2 sm:flex sm:flex-col sm:items-center lg:items-start xl:ml-8">
+          <div className="space-y-5 lg:pt-2 sm:flex sm:flex-col sm:items-center lg:items-start md:mt-8 xl:ml-8">
             <h3 className="text-sm font-bold text-white tracking-widest">Quick Links</h3>
             <ul className="space-y-2.5 sm:text-left lg:text-left">
               {quickLinks.map((link) => (
@@ -126,7 +126,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3 — Contact Info */}
-          <div className="space-y-5 lg:pt-2">
+          <div className="space-y-5 lg:pt-2 md:mt-8">
             <h3 className="text-sm font-bold text-white tracking-widest">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-2.5">
@@ -157,7 +157,7 @@ export default function Footer() {
           </div>
 
           {/* Col 4 — CTA + QR */}
-          <div className="space-y-4 lg:pt-2 flex flex-col items-start sm:items-center lg:items-center justify-start sm:justify-center lg:justify-center">
+          <div className="space-y-4 lg:pt-2 md:mt-6 flex flex-col items-start sm:items-center lg:items-center justify-start sm:justify-center lg:justify-center">
             <h3 className="text-base font-bold text-white">Have a story to tell?</h3>
             <p className="text-white text-sm leading-relaxed text-left sm:text-center lg:text-center">
               Let's create something meaningful together.
@@ -183,7 +183,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[15px] font-semibold text-white"
+          className="mt-8 pt-1 flex flex-col md:flex-row items-center justify-between gap-6 text-[15px] font-semibold text-white"
           style={{ borderTop: "1px solid rgba(255,255,255,0.15)", fontFamily: "'Inter', sans-serif" }}
         >
           <p>© {currentYear} Vispera Studios. All rights reserved.</p>
