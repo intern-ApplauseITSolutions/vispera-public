@@ -34,10 +34,10 @@ export default function Hero() {
             >
               {/* Desktop/Tablet version */}
               <p
-                className="hidden md:block text-center text-[#1a1a1a] align-middle md:text-[16px] lg:text-[22px]"
+                className="hidden md:block text-center text-[#1a1a1a] align-middle md:text-[18px] lg:text-[24px]"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontWeight: 700,
+                  fontWeight: 600,
                   lineHeight: '20px',
                   letterSpacing: '0.04em',
                   textTransform: 'capitalize'
@@ -48,7 +48,7 @@ export default function Hero() {
 
               {/* Mobile version with exact Figma specs (358x69) - Forced 2-line layout */}
               <div 
-                className="block md:hidden w-full max-w-[300px] flex items-center justify-center p-2"
+                className="block md:hidden w-full max-w-[320px] flex items-center justify-center p-2"
                 style={{
                   height: '5px',
                   borderRadius: '5px', 
@@ -58,9 +58,9 @@ export default function Hero() {
                   className="text-center text-[#0A374C]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontWeight: 700,
+                    fontWeight: 600,
                     fontSize: '10px',
-                    lineHeight: '15px',
+                    lineHeight: '14px',
                     letterSpacing: '0.04em',
                     textTransform: 'capitalize'
                   }}
