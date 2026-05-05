@@ -187,7 +187,7 @@ export default function InquiryModal({ isOpen, onClose }) {
 
             {/* Header */}
             <div className="mb-3 sm:mb-4 pr-8 sm:pr-10">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0A374C] mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#0A374C] mb-1" style={{ fontFamily: "'Outfit', sans-serif" }}>
                 Start Your Project
               </h2>
               <p className="text-[10px] sm:text-xs text-gray-600" style={{ fontFamily: "'Inter', sans-serif" }}>
